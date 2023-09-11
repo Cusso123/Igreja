@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form>
+
+    <h1 class="h3 mb-3 fw-normal">Cadastre - se</h1>
+    <div class="form-floating mb-3 w-50 py-2">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating w-50 py-2">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
+        <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-check text-start my-3" w-50 py-2>
+        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            Lembrar de mim
+        </label>
+    </div>
+    <button class="btn btn-primary w-50 py-2" type="submit">Entrar</button>
+
+</form>
