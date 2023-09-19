@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Igreja.Dominio.ValueObjects
 {
-    public class PlanoEstudo : Ensino
+    public class Hinario : Ensino
     {
 
     }

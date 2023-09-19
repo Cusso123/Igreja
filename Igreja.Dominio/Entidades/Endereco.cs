@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Igreja.Dominio.Entidades
 {
-    internal class Endereco
+     public class Endereco
     {
+        public int Cep { get; set; }
+        public string Rua { get; set; }
+        public string Estado { get; set; }
+        public string Cidade { get; set; }
+
     }
 }

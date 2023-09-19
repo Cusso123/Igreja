@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Igreja.Dominio.Entidades
 {
-    internal class Ensino
+    public class Ensino
     {
     }
 }
