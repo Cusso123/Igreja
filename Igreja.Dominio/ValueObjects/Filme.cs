@@ -9,6 +9,7 @@ namespace Igreja.Dominio.ValueObjects
 {
     public class Filme : Midia
     {
-
+        public int Duracao { get; set; }
+        public string Resumo { get; set; }
     }
 }

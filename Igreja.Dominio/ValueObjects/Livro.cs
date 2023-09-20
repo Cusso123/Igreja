@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Igreja.Dominio.ValueObjects
 {
-    public class Livro : Ensino
-    {
+    public class Livro 
 
+    {
+        public string[] Conteudo { get; set; }
+        public int QtdPaginas { get; set; }
     }
 }

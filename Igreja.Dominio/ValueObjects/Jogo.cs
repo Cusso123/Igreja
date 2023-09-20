@@ -9,6 +9,7 @@ namespace Igreja.Dominio.ValueObjects
 {
     internal class Jogo : Midia
     {
-
+        public string Objetivo { get; set; }
+        public string Sinopse { get; set; }
     }
 }

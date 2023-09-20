@@ -9,6 +9,6 @@ namespace Igreja.Dominio.ValueObjects
 {
     public class Audio : Midia
     {
-
+        public int Duracao { get; set; }
     }
 }
