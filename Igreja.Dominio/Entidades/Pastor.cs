@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Igreja.Dominio.Entidades
 {
-    public class Pastor
+    public class Pastor 
     {
+        public Endereco Endereco { get; set; }
+
     }
 }

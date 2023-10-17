@@ -9,6 +9,7 @@ namespace Igreja.Dominio.ValueObjects
 {
     public class QuizBiblico : Ensino
     {
-
+        public int QtdQuestoes { get; set; }
+        public string[] Questoes { get; set; }
     }
 }
