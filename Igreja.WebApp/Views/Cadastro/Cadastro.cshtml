@@ -15,7 +15,7 @@
         <form id="login_form">
             <!-- FORM HEADER -->
             <div id="form_header">
-                <h1>Login</h1>
+                <h1>Cadastro</h1>
                 <i id="mode_icon" class="fa-solid fa-moon"></i>
             </div>
 
@@ -39,6 +39,17 @@
 
             <!-- INPUTS -->
             <div id="inputs">
+                <!-- NAME -->
+                <div class="input-box">
+                    <label for="nome">
+                        Nome
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" class="form-control" placeholder="Digite seu nome" aria-label="Digite seu nome" aria-describedby="basic-addon1" id="nome" name="nome">
+                        </div>
+                    </label>
+                </div>
+
                 <!-- EMAIL -->
                 <div class="input-box">
                     <label for="email">
@@ -62,8 +73,8 @@
 
                     <!-- FORGOT PASSWORD -->
                     <div id="forgot_password">
-                        <a asp-controller="Cadastro" asp-action="Cadastro">
-                            Não tem o cadastro?
+                        <a asp-controller="Autenticar" asp-action="Index">
+                            Ja possui cadastro?
                         </a>
                     </div>
                 </div>
@@ -71,9 +82,10 @@
 
             <!-- LOGIN BUTTON -->
             <button type="submit" id="login_button">
-            <a asp-controller="Home" asp-action="Index">
-                Login
-            </a>
+                <a asp-controller="Autenticar" asp-action="Index">
+                    Cadastrar
+                </a>
+
             </button>
         </form>
     </main>
