@@ -17,7 +17,14 @@ namespace Igreja.WebApp.Controllers
         {
             return View();
         }
-
+        public IActionResult Blog()
+        {
+            return View();
+        }
+        public IActionResult Inicio()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
