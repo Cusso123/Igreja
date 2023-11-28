@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Paginas\blog.cshtml" />
+    <Compile Remove="Views\Paginas\**" />
+    <Content Remove="Views\Paginas\**" />
+    <EmbeddedResource Remove="Views\Paginas\**" />
+    <None Remove="Views\Paginas\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Paginas\" />
     <Folder Include="wwwroot\css\Imagem\" />
   </ItemGroup>
 
