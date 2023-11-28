@@ -25,6 +25,13 @@ namespace Igreja.WebApp.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
+=======
+        public IActionResult Eventos()
+        {
+            return View();
+        }
+>>>>>>> Atualização
         public IActionResult Contato()
         {
             return View();
