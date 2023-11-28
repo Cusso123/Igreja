@@ -1206,8 +1206,8 @@ button.scrollTopStick {
 
 .top-bar {
     padding: 15px 0;
-    border-bottom: 5px solid #d98d39;
-    background-color: #b1712a;
+    border-bottom: 5px solid #111111;
+    background-color: #03BC98;
 }
 
     .top-bar .row {
