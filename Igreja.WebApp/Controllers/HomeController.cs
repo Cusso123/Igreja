@@ -12,7 +12,6 @@ namespace Igreja.WebApp.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -29,12 +28,11 @@ namespace Igreja.WebApp.Controllers
         {
             return View();
         }
-
-        public IActionResult Contato()
+        public IActionResult Sermao()
         {
             return View();
         }
-        public IActionResult Sermao()
+        public IActionResult Contato()
         {
             return View();
         }

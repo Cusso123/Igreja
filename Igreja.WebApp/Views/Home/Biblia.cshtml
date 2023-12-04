@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- Title -->
-	<title>Events</title>
+	<title>Biblia</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
 	<!-- Animate on scroll -->
@@ -26,15 +26,14 @@
 				<div class="row">
 					<div class="col-lg-9">
 						<ul class="login">
-							<li><a href="JavaScript:void(0)"><img src="~/images/user-profile.svg" alt="User Profile">Login or Register</a></li>
+							<li><a asp-controller="Autenticar" asp-action="Index" img src="~/images/user-profile.svg" alt="User Profile">Login or Register</a></li>
 							<li><a href="JavaScript:void(0)"><img src="~/images/bell.svg" alt="Bell">Apresentar O Evangelho De Jesus Cristo De Forma A Alcançar Novos Discípulos</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-2 offset-1">
 						<ul class="social-medias">
-							<li><a href="JavaScript:void(0)"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-							<li><a href="JavaScript:void(0)"><img src="~/images/twitter.svg" alt="twitter"></a></li>
-							<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+							<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+							<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -54,16 +53,26 @@
 								<ul>
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Home</a>
+									<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
+									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
+									<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
+									</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermao</a
+								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
+									<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
+									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+										</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Paginas</a>
-								</li>
-								<li><a href="contact-us.html">Contato</a></li>
+									<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
 							</ul>
 							</div>
 							<div id="nav-icon4">
@@ -85,19 +94,29 @@
 			<ul>
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Home</a>
+									<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
+									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
+									<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
+									</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermao</a>
+								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
+									<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
+									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
+								<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+								</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Paginas</a>
-								</li>
-								<li><a href="contact-us.html">Contato</a></li>
-							</ul>
+				<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
+			</ul>
 			<div class="res-rights flex-all">
-				<p>Blesso</p>
+				<p>2023 - Presbiteriana</p>
 			</div>
 			<a href="JavaScript:void(0)" id="res-cross"></a>
 		</div>
@@ -118,120 +137,15 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 1">
+						<img src="~/images/Aigrejaeumhospital.png" alt="Event Image 1">
 						<div class="event-data">
 							<p class="text-white">Stom Park New York</p>
 							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 1">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 1">1:00 pm - 2:00 pm</li>
-							</ul>
+							<ul>							</ul>
 							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 2">
-						<div class="event-data">
-							<p class="text-white">Stom Park New York</p>
-							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 2">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 2">1:00 pm - 2:00 pm</li>
-							</ul>
-							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 3">
-						<div class="event-data">
-							<p class="text-white">Stom Park New York</p>
-							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 3">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 3">1:00 pm - 2:00 pm</li>
-							</ul>
-							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 4">
-						<div class="event-data">
-							<p class="text-white">Stom Park New York</p>
-							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 4">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 4">1:00 pm - 2:00 pm</li>
-							</ul>
-							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 5">
-						<div class="event-data">
-							<p class="text-white">Stom Park New York</p>
-							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 5">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 5">1:00 pm - 2:00 pm</li>
-							</ul>
-							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 6">
-						<div class="event-data">
-							<p class="text-white">Stom Park New York</p>
-							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 6">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 6">1:00 pm - 2:00 pm</li>
-							</ul>
-							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 7">
-						<div class="event-data">
-							<p class="text-white">Stom Park New York</p>
-							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 7">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 7">1:00 pm - 2:00 pm</li>
-							</ul>
-							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event">
-						<img src="https://via.placeholder.com/360x530" alt="Event Image 8">
-						<div class="event-data">
-							<p class="text-white">Stom Park New York</p>
-							<h4><a href="event-detail.html" tabindex="0">Suicide Loss Grief Support Group</a></h4>
-							<ul>
-								<li><img src="~/images/calendar.svg" alt="calendar 8">Thursday, June 4, 2020</li>
-								<li><img src="~/images/clock.svg" alt="clock 8">1:00 pm - 2:00 pm</li>
-							</ul>
-							<a class="theme-btn" href="JavaScript:void(0)" tabindex="0">Book Your Seat</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="d-flex justify-content-center loadmore">
-				<a href="JavaScript:void(0)" class="theme-btn">Carregar Mais</a>
-			</div>
 		</div>
 	</section>
 	<!-- Contact Us End -->
@@ -246,7 +160,7 @@
 				<div class="col-lg-7 col-md-12 col-sm-12">
 					<form>
 						<input type="text" name="Text" placeholder="Insira o seu endereço de email...">
-						<button>Subscribe</button>
+						<button>Se inscrever</button>
 					</form>
 				</div>
 			</div>
@@ -260,9 +174,8 @@
 			<div class="copy-right">
 				<div class="social">
 					<ul class="social-medias">
-						<li><a href="JavaScript:void(0)"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-						<li><a href="JavaScript:void(0)"><img src="~/images/twitter.svg" alt="twitter"></a></li>
-						<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+						<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+						<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
 					</ul>
 				</div>
 				<div class="footer-rights">

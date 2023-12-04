@@ -26,15 +26,14 @@
 				<div class="row">
 					<div class="col-lg-9">
 						<ul class="login">
-							<li><a href="JavaScript:void(0)"><img src="~/images/user-profile.svg" alt="User Profile">Faça login ou cadastre-se</a></li>
+							<li><a asp-controller="Autenticar" asp-action="Index" img src="~/images/user-profile.svg" alt="User Profile">Faça login ou cadastre-se</a></li>
 							<li><a href="JavaScript:void(0)"><img src="~/images/bell.svg" alt="Bell">Apresentar O Evangelho De Jesus Cristo De Forma A Alcançar Novos Discípulos</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-2 offset-1">
 						<ul class="social-medias">
-							<li><a href="JavaScript:void(0)"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-							<li><a href="JavaScript:void(0)"><img src="~/images/twitter.svg" alt="twitter"></a></li>
-							<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+							<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+							<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -54,16 +53,26 @@
 								<ul>
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Home</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
+										</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
+										</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermao</a>
+								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
+										</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+										</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Paginas</a>
-								</li>
-								<li><a href="contact-us.html">Contato</a></li>
+											<li><a asp-controller ="Home" asp-action="Contato">Contato</a></li>
 							</ul>
 							</div>
 							<div id="nav-icon4">
@@ -84,19 +93,29 @@
 			</div>
 			<ul>
 				<li class="menu-item-has-children"><a href="JavaScript:void(0)">Home</a>
+					<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
+					</ul>
 				</li>
 				<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
+					<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
+					</ul>
 				</li>
-				<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermao</a>
+				<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
+					<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
+					</ul>
 				</li>
 				<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
+					<ul class="sub-menu">
+						<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+					</ul>
 				</li>
-				<li class="menu-item-has-children"><a href="JavaScript:void(0)">Paginas</a>
-				</li>
-				<li><a href="contact-us.html">Contato</a></li>
+						<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
 			</ul>
 			<div class="res-rights flex-all">
-				<p>Presbiteriana </p>
+				<p>2023 - Presbiteriana </p>
 			</div>
 			<a href="JavaScript:void(0)" id="res-cross"></a>
 		</div>
@@ -118,79 +137,94 @@
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="blog-meta aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
 						<figure>
-							<img class="img-fluid" src="https://via.placeholder.com/360x270" alt="Blog image">
+							<img class="img-fluid" src="https://ipbaraxa.com.br/wp-content/uploads/elementor/thumbs/oracao-e1685038437590-q6zumco7edzc339qkvcryxanpk8jenxwlhq8ygkrhs.webp" alt="Blog image">
 						</figure>
 						<ul>
-							<li class="date">21 Dec, 2021</li>
-							<li><img src="~/images/message.svg" alt="Message">12</li>
+							<li class="date">Maio 25, 2023</li>
+							<li><img src="~/images/message.svg" alt="Message">1</li>
 						</ul>
-						<a href="blog-detail.html" class="font-bold">Public Health By Allowing California Order</a>
-						<p>Alienum phaedrum toquatoeu, vis detraxit iculis eiex petenis in mei Mei an peri sl gra an peri sl graecis vix apernihil.</p>
+						<a href="https://ipbaraxa.com.br/uma-oracao-eficaz-parte-2/" class="font-bold">UMA ORAÇÃO EFICAZ – Parte 2</a>
+						<p>
+							II – POR ANSIAR A BENÇÃO DE DEUS COMO ALGO VALIOSO
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="blog-meta aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
 						<figure>
-							<img class="img-fluid" src="https://via.placeholder.com/360x270" alt="Blog image 2">
+							<img class="img-fluid" src="https://ipbaraxa.com.br/wp-content/uploads/elementor/thumbs/oracao-q50iebm6munb2yt7uqrqqdqvjm8jvswwqmur441ws0.webp" alt="Blog image 2">
 						</figure>
 						<ul>
-							<li class="date">21 Dec, 2021</li>
-							<li><img src="~/images/message.svg" alt="Message 2">12</li>
+							<li class="date">Abril 14, 2023</li>
+							<li><img src="~/images/message.svg" alt="Message 2">1</li>
 						</ul>
-						<a href="blog-detail.html" class="font-bold">Public Health By Allowing California Order</a>
-						<p>Alienum phaedrum toquatoeu, vis detraxit iculis eiex petenis in mei Mei an peri sl gra an peri sl graecis vix apernihil.</p>
+						<a href="https://ipbaraxa.com.br/uma-oracao-eficaz-parte-1/" class="font-bold">UMA ORAÇÃO EFICAZ – Parte 1</a>
+						<p>
+							1 Crônicas 4.9-10 – A oração de Jabez
+							I – POR EXISTIR A SUBMISSÃO À VONTADE DE DEUS
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="blog-meta aos-init aos-animate" data-aos="fade-up" data-aos-duration="1300">
 						<figure>
-							<img class="img-fluid" src="https://via.placeholder.com/360x270" alt="Blog image 3">
+							<img class="img-fluid" src="https://ipbaraxa.com.br/wp-content/uploads/elementor/thumbs/A-superioridade-de-Cristo-ipbaraxa-q34fegi63geg0gbsbt0f7w7phzkx7dndrnl6v68y0g.jpg" alt="Blog image 3">
 						</figure>
 						<ul>
-							<li class="date">21 Dec, 2021</li>
-							<li><img src="~/images/message.svg" alt="Message 3">12</li>
+							<li class="date">Março 6, 2023</li>
+							<li><img src="~/images/message.svg" alt="Message 3">3</li>
 						</ul>
-						<a href="blog-detail.html" class="font-bold">Public Health By Allowing California Order</a>
-						<p>Alienum phaedrum toquatoeu, vis detraxit iculis eiex petenis in mei Mei an peri sl gra an peri sl graecis vix apernihil.</p>
+						<a href="https://ipbaraxa.com.br/a-superioridade-de-cristo/" class="font-bold">A Superioridade De Cristo</a>
+						<p>
+							Em um mundo cada vez mais pluralista, onde diferentes ideologias e filosofias competem por nossa atenção, é fácil se sentir perdido e confuso sobre qual caminho seguir. Mas como cristãos, temos a verdadeira fonte de sabedoria e conhecimento em Jesus Cristo.
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="blog-meta aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
 						<figure>
-							<img class="img-fluid" src="https://via.placeholder.com/360x270" alt="Blog image 4">
+							<img class="img-fluid" src="https://ipbaraxa.com.br/wp-content/uploads/elementor/thumbs/incredulidade-q064igzqh2ewbc0ilu36m5zkq4g7zuajrfkty47qy8.jpg" alt="Blog image 4">
 						</figure>
 						<ul>
-							<li class="date">21 Dec, 2021</li>
-							<li><img src="~/images/message.svg" alt="Message 4">12</li>
+							<li class="date">Janeiro 4, 2023</li>
+							<li><img src="~/images/message.svg" alt="Message 4">5</li>
 						</ul>
-						<a href="blog-detail.html" class="font-bold">Public Health By Allowing California Order</a>
-						<p>Alienum phaedrum toquatoeu, vis detraxit iculis eiex petenis in mei Mei an peri sl gra an peri sl graecis vix apernihil.</p>
+						<a href="https://ipbaraxa.com.br/lutando-contra-a-incredulidade/" class="font-bold">Lutando Contra A Incredulidade</a>
+						<p>
+							Nós estamos em guerra!
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="blog-meta aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
 						<figure>
-							<img class="img-fluid" src="https://via.placeholder.com/360x270" alt="Blog image 5">
+							<img class="img-fluid" src="https://ipbaraxa.com.br/wp-content/uploads/elementor/thumbs/nascimento-de-jesus-pzu6ebzfh9slwfl93qbz8j98vrsup5c0w25dy6pank.jpg" alt="Blog image 5">
 						</figure>
 						<ul>
-							<li class="date">21 Dec, 2021</li>
-							<li><img src="~/images/message.svg" alt="Message 5">12</li>
+							<li class="date">Dezembro 28, 2022</li>
+							<li><img src="~/images/message.svg" alt="Message 5">10</li>
 						</ul>
-						<a href="blog-detail.html" class="font-bold">Public Health By Allowing California Order</a>
-						<p>Alienum phaedrum toquatoeu, vis detraxit iculis eiex petenis in mei Mei an peri sl gra an peri sl graecis vix apernihil.</p>
+						<a href="https://ipbaraxa.com.br/o-simples-nascimento-de-jesus-p2/" class="font-bold">O SIMPLES NASCIMENTO DE JESUS – P2</a>
+						<p>
+							Por que o nascimento de Jesus foi simples?
+							II – POR SER DESIGNADO PELA PROVIDÊNCIA DIVINA
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="blog-meta aos-init aos-animate" data-aos="fade-up" data-aos-duration="1300">
 						<figure>
-							<img class="img-fluid" src="https://via.placeholder.com/360x270" alt="Blog image 6">
+							<img class="img-fluid" src="https://ipbaraxa.com.br/wp-content/uploads/elementor/thumbs/o-nascimento-de-Jesus-pzu68rrt1k6j7ho2ktsfzfs2cp7o5m974j6yq8y5gw.jpg" alt="Blog image 6">
 						</figure>
 						<ul>
-							<li class="date">21 Dec, 2021</li>
-							<li><img src="~/images/message.svg" alt="Message 6">12</li>
+							<li class="date">Dezembro 28, 2022</li>
+							<li><img src="~/images/message.svg" alt="Message 6">6</li>
 						</ul>
-						<a href="blog-detail.html" class="font-bold">Public Health By Allowing California Order</a>
-						<p>Alienum phaedrum toquatoeu, vis detraxit iculis eiex petenis in mei Mei an peri sl gra an peri sl graecis vix apernihil.</p>
+						<a href="https://ipbaraxa.com.br/o-simples-nascimento-de-jesus-p1/" class="font-bold">O SIMPLES NASCIMENTO DE JESUS – P1</a>
+						<p>
+							Por que o nascimento de Jesus foi simples?
+							POR SER IMPRÓPRIO PARA UM BEBÊ CHEGAR AO MUNDO
+						</p>
 					</div>
 				</div>
 				<div class="d-flex justify-content-center loadmore">
@@ -211,7 +245,7 @@
 				<div class="col-lg-7 col-md-12 col-sm-12">
 					<form>
 						<input type="text" name="Text" placeholder="Insira o seu endereço de email...">
-						<button>Subscribe</button>
+						<button>Se inscrever</button>
 					</form>
 				</div>
 			</div>
@@ -225,9 +259,8 @@
 			<div class="copy-right">
 				<div class="social">
 					<ul class="social-medias">
-						<li><a href="JavaScript:void(0)"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-						<li><a href="JavaScript:void(0)"><img src="~/images/twitter.svg" alt="twitter"></a></li>
-						<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+						<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+						<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
 					</ul>
 				</div>
 				<div class="footer-rights">

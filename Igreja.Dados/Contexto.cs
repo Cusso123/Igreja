@@ -1,26 +1,30 @@
 ﻿using System;
 using Igreja.Dados.EntityFramework.Configuration;
 using Igreja.Dominio.Entidades;
-using Igreja.Dominion.Entities;
 using Microsoft.EntityFrameworkCore;
 
-public class Contexto : DbContext
+namespace Igreja.Dados
+{
+    public class Contexto : DbContext
     {
-        public DbSet<Endereco> Endereco { get; set; }
+        public DbSet<MembroCadastro> MembroCadastro { get; set; }
 
-        public Contexto(DbContextOptionsBuilder options) : base(options.Options)
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            options.UseSqlServer(@"Data source = 201.62.57.93:1434; 
-                                    Database = DB044323; 
-                                    User ID = RA044323; 
-                                    Password = 044323");
+            optionsBuilder.UseSqlServer(@"Data source = 201.62.57.93, 1434; 
+                                        Database = BD044983; 
+                                        User ID = RA044983; 
+                                        Password = 044983;
+                                        TrustServerCertificate = True");
 
         }
 
-        protected override void OnModeCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfiguration(new EnderecoConfiguration());
-    }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new MembroCadastroConfiguration());
+        }
 
     }
+}
 

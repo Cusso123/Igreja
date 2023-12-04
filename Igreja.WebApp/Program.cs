@@ -1,7 +1,25 @@
+using Igreja.Dominio.Interfaces;
+using Igreja.Dominio.Servicos;
+using Igreja.Dados;
+using Igreja.Dados.Repository;
+using Igreja.Servico.Servicos;
+using System.Configuration;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Contexto>();
+builder.Services.AddScoped<IMembroCadastroRepository, MembroCadastroRepository>();
+builder.Services.AddScoped<IMembroCadastroService, MembroCadastroService>();
+builder.Services.AddSession();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<BibleContext>(options =>
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -22,6 +40,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Autenticar}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Inicio}/{id?}");
 
 app.Run();

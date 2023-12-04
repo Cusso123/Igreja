@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- Title -->
-	<title>Sermao</title>
+	<title>Sermão</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
 	<!-- Animate on scroll -->
@@ -26,15 +26,14 @@
 				<div class="row">
 					<div class="col-lg-9">
 						<ul class="login">
-							<li><a href="JavaScript:void(0)"><img src="~/images/user-profile.svg" alt="User Profile">Login or Register</a></li>
+							<li><a asp-controller="Autenticar" asp-action="Index" img src="~/images/user-profile.svg" alt="User Profile">Login or Register</a></li>
 							<li><a href="JavaScript:void(0)"><img src="~/images/bell.svg" alt="Bell">Apresentar O Evangelho De Jesus Cristo De Forma A Alcançar Novos Discípulos</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-2 offset-1">
 						<ul class="social-medias">
-							<li><a href="JavaScript:void(0)"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-							<li><a href="JavaScript:void(0)"><img src="~/images/twitter.svg" alt="twitter"></a></li>
-							<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+							<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+							<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -54,16 +53,26 @@
 								<ul>
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Home</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
+										</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
+										</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermao</a>
+								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
+										</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
+										<ul class="sub-menu">
+											<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+										</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Pagina</a>
-								</li>
-								<li><a href="contact-us.html">Contato</a></li>
+								<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
 							</ul>
 							</div>
 							<div id="nav-icon4">
@@ -84,19 +93,29 @@
 			</div>
 			<ul>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Home</a>
+								<ul class="sub-menu">
+								<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
+								</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
+								<ul class="sub-menu">
+								<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
+								</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermao</a>
+								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
+								<ul class="sub-menu">
+								<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
+								</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
+								<ul class="sub-menu">
+								<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+								</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Paginas</a>
-								</li>
-								<li><a href="contact-us.html">Contato</a></li>
-							</ul>
+								<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
+			</ul>
 			<div class="res-rights flex-all">
-				<p>2021 Blesso</p>
+				<p>2023 - Presbiteriana</p>
 			</div>
 			<a href="JavaScript:void(0)" id="res-cross"></a>
 		</div>
@@ -106,7 +125,7 @@
 	<section class="banner position-relative">
 		<div class="parallax" style="background-image: url(https://scontent.faax1-1.fna.fbcdn.net/v/t39.30808-6/314187979_659891428909025_682872856793391917_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeFsh4bwR8ZEaB1pLyZq8Of1dk1Y_xk5OLR2TVj_GTk4tB3yLhC6orVrcYzVKLmFLC0&_nc_ohc=gtUrTl7_e1AAX_cam_t&_nc_ht=scontent.faax1-1.fna&oh=00_AfCfxTpWuZ_lefQGVH30uWOrJF6vS6v9FWFBpUkFvdvilA&oe=6571CB88);"></div>
 			<div class="banner-data text-center">
-				<h2 class="text-white font-bold">Sermao</h2>
+				<h2 class="text-white font-bold">Sermão</h2>
 			<img src="~/images/SimboloPresbiteriana50x65.png" alt="Banner Logo">
 			</div>
 	</section>
@@ -118,166 +137,116 @@
 				<div class="sermon aos-init aos-animate" data-aos="zoom-in-right" data-aos-duration="1000">
 					<div class="sermon-img">
 						<div class="sermon-media">
-							<img src="https://via.placeholder.com/610x360" alt="Sermon Image">
+							<img src="~/images/UmcoraçãoEndurecido.png" alt="Sermon Image">
 							<video controls>
-								<source src="~/videos/video.mp4" type="video/mp4">
-								Your browser does not support the video tag.
+								<source src="~/videos/UmcoracaoEndurecido.mp4" type="video/mp4">
 							</video>
-							<div class="audio-player style2">
-								<audio controls>
-								  <!-- <source src="audio.ogg" type="audio/ogg"> -->
-									<source src="~/music/audio-4.mp3" type="audio/mpeg">
-								  Your browser does not support the audio element.
-								</audio>
-							</div>
 						</div>
 						<ul>
 							<li><a class="s_audio" href="JavaScript:void(0)"><img src="~/images/music-note.svg" alt="volume"></a></li>
 							<li><a class="s_video" href="JavaScript:void(0)"><img src="~/images/play-button-2.svg" alt="Play Button"></a></li>
-							<li><a class="s_pdf" href="JavaScript:void(0)"><img src="~/images/book.svg" alt="Book"></a></li>
-							<li><a class="s_music" href="JavaScript:void(0)"><img src="~/images/download.svg" alt="download"></a></li>
 						</ul>
 					</div>
 					<div class="sermon-data">
 						<ul>
-							<li>Jorge karri</li>
-							<li>Nov 19, 2021</li>
+							<li>Pr. Tiago Ramos</li>
+							<li>3 de dezembro, 2023</li>
 						</ul>
-						<h3><a href="sermon-detail.html">Spiritually Reborn As God’s Children</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipi elit, sed totam rem ape eaque ipsa quae ab illo e ipsa quae ab ille ab illo inventore.</p>
+						<h3><a>Um Coração Endurecido</a></h3>
+						<p>Mensagem pregada pelo Presbitero Tiago Ramos na IPB central de Araxá</p>
 					</div>
 				</div>
 				<div class="sermon aos-init" data-aos="zoom-in-right" data-aos-duration="1000">
 					<div class="sermon-img">
 						<div class="sermon-media">
-							<img src="https://via.placeholder.com/610x360" alt="Sermon Image">
+							<img src="~/images/Gratidao].png" alt="Sermon Image">
 							<video controls>
-								<source src="~/videos/video.mp4" type="video/mp4">
-								Your browser does not support the video tag.
+								<source src="~/videos/Gratidao.mp4" type="video/mp4">
 							</video>
-							<div class="audio-player style2">
-								<audio controls>
-								  <!-- <source src="audio.ogg" type="audio/ogg"> -->
-									<source src="~/music/audio-4.mp3" type="audio/mpeg">
-								  Your browser does not support the audio element.
-								</audio>
-							</div>
 						</div>
 						<ul>
 							<li><a class="s_audio" href="JavaScript:void(0)"><img src="~/images/music-note.svg" alt="volume"></a></li>
 							<li><a class="s_video" href="JavaScript:void(0)"><img src="~/images/play-button-2.svg" alt="Play Button"></a></li>
-							<li><a class="s_pdf" href="JavaScript:void(0)"><img src="~/images/book.svg" alt="Book"></a></li>
-							<li><a class="s_music" href="JavaScript:void(0)"><img src="~/images/download.svg" alt="download"></a></li>
 						</ul>
 					</div>
 					<div class="sermon-data">
 						<ul>
-							<li>Jorge karri</li>
-							<li>Nov 19, 2021</li>
+							<li>Ev. Thiago Souza</li>
+							<li>25 de novembro, 2023</li>
 						</ul>
-						<h3><a href="sermon-detail.html">Spiritually Reborn As God’s Children</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipi elit, sed totam rem ape eaque ipsa quae ab illo e ipsa quae ab ille ab illo inventore.</p>
+						<h3><a>Gratidão</a></h3>
+						<p>Mensagem pregada pelo Ev. Thiago Souza na IPB central de Araxá</p>
 					</div>
 				</div>
 				<div class="sermon aos-init" data-aos="zoom-in-right" data-aos-duration="1000">
 					<div class="sermon-img">
 						<div class="sermon-media">
-							<img src="https://via.placeholder.com/610x360" alt="Sermon Image">
+							<img src="~/images/temosqueserdiferentes.png" alt="Sermon Image">
 							<video controls>
-								<source src="~/videos/video.mp4" type="video/mp4">
-								Your browser does not support the video tag.
+								<source src="~/videos/temosqueserdiferentes.mp4" type="video/mp4">
 							</video>
-							<div class="audio-player style2">
-								<audio controls>
-								  <!-- <source src="audio.ogg" type="audio/ogg"> -->
-									<source src="~/music/audio-4.mp3" type="audio/mpeg">
-								  Your browser does not support the audio element.
-								</audio>
-							</div>
 						</div>
 						<ul>
 							<li><a class="s_audio" href="JavaScript:void(0)"><img src="~/images/music-note.svg" alt="volume"></a></li>
 							<li><a class="s_video" href="JavaScript:void(0)"><img src="~/images/play-button-2.svg" alt="Play Button"></a></li>
-							<li><a class="s_pdf" href="JavaScript:void(0)"><img src="~/images/book.svg" alt="Book"></a></li>
-							<li><a class="s_music" href="JavaScript:void(0)"><img src="~/images/download.svg" alt="download"></a></li>
 						</ul>
 					</div>
 					<div class="sermon-data">
 						<ul>
-							<li>Jorge karri</li>
-							<li>Nov 19, 2021</li>
+							<li>Ev. João Vitor</li>
+							<li>28 de outubro, 2023</li>
 						</ul>
-						<h3><a href="sermon-detail.html">Spiritually Reborn As God’s Children</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipi elit, sed totam rem ape eaque ipsa quae ab illo e ipsa quae ab ille ab illo inventore.</p>
+						<h3><a>Temos que ser diferentes</a></h3>
+						<p>Mensagem pregada pelo Ev. João Vitor na IPB central de Araxá.</p>
 					</div>
 				</div>
 				<div class="sermon aos-init" data-aos="zoom-in-right" data-aos-duration="1000">
 					<div class="sermon-img">
 						<div class="sermon-media">
-							<img src="https://via.placeholder.com/610x360" alt="Sermon Image">
+							<img src="~/images/VerdadeiroCulto.png" alt="Sermon Image">
 							<video controls>
-								<source src="~/videos/video.mp4" type="video/mp4">
-								Your browser does not support the video tag.
+								<source src="~/videos/VerdadeiroCulto.mp4" type="video/mp4">
 							</video>
-							<div class="audio-player style2">
-								<audio controls>
-								  <!-- <source src="audio.ogg" type="audio/ogg"> -->
-									<source src="~/music/audio-4.mp3" type="audio/mpeg">
-								  Your browser does not support the audio element.
-								</audio>
-							</div>
 						</div>
 						<ul>
 							<li><a class="s_audio" href="JavaScript:void(0)"><img src="~/images/music-note.svg" alt="volume"></a></li>
 							<li><a class="s_video" href="JavaScript:void(0)"><img src="~/images/play-button-2.svg" alt="Play Button"></a></li>
-							<li><a class="s_pdf" href="JavaScript:void(0)"><img src="~/images/book.svg" alt="Book"></a></li>
-							<li><a class="s_music" href="JavaScript:void(0)"><img src="~/images/download.svg" alt="download"></a></li>
 						</ul>
 					</div>
 					<div class="sermon-data">
 						<ul>
-							<li>Jorge karri</li>
-							<li>Nov 19, 2021</li>
+							<li>Rev. Clodoaldo Caldas</li>
+							<li>23 de setembro, 2023</li>
 						</ul>
-						<h3><a href="sermon-detail.html">Spiritually Reborn As God’s Children</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipi elit, sed totam rem ape eaque ipsa quae ab illo e ipsa quae ab ille ab illo inventore.</p>
+						<h3><a>O verdadeiro culto</a></h3>
+						<p>Estudo dado pelo Rev. Clodoaldo Caldas na última quarta na IPB Central de Araxá.</p>
 					</div>
 				</div>
 				<div class="sermon aos-init" data-aos="zoom-in-right" data-aos-duration="1000">
 					<div class="sermon-img">
 						<div class="sermon-media">
-							<img src="https://via.placeholder.com/610x360" alt="Sermon Image">
+							<img src="~/images/Aigrejaeumhospital.png" alt="Sermon Image">
 							<video controls>
-								<source src="~/videos/video.mp4" type="video/mp4">
-								Your browser does not support the video tag.
+								<source src="~/videos/Igrejaeumhospital.mp4" type="video/mp4">
 							</video>
-							<div class="audio-player style2">
-								<audio controls>
-								  <!-- <source src="audio.ogg" type="audio/ogg"> -->
-									<source src="~/music/audio-4.mp3" type="audio/mpeg">
-								  Your browser does not support the audio element.
-								</audio>
-							</div>
 						</div>
 						<ul>
 							<li><a class="s_audio" href="JavaScript:void(0)"><img src="~/images/music-note.svg" alt="volume"></a></li>
 							<li><a class="s_video" href="JavaScript:void(0)"><img src="~/images/play-button-2.svg" alt="Play Button"></a></li>
-							<li><a class="s_pdf" href="JavaScript:void(0)"><img src="~/images/book.svg" alt="Book"></a></li>
-							<li><a class="s_music" href="JavaScript:void(0)"><img src="~/images/download.svg" alt="download"></a></li>
 						</ul>
 					</div>
 					<div class="sermon-data">
 						<ul>
-							<li>Jorge karri</li>
-							<li>Nov 19, 2021</li>
+							<li>Rev. Josiel</li>
+							<li>23 de setembro, 2023</li>
 						</ul>
-						<h3><a href="sermon-detail.html">Spiritually Reborn As God’s Children</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipi elit, sed totam rem ape eaque ipsa quae ab illo e ipsa quae ab ille ab illo inventore.</p>
+						<h3><a href="sermon-detail.html">A igreja é um hospital</a></h3>
+						<p>Mensagem pregada no último domingo pelo Rev. Josiel na IPB central.</p>
 					</div>
 				</div>
 			</div>
 			<div class="d-flex justify-content-center loadmore">
-				<a href="JavaScript:void(0)" class="theme-btn">Load More</a>
+				<a href="JavaScript:void(0)" class="theme-btn">Carregue Mais</a>
 			</div>
 		</div>
 	</section>
@@ -293,7 +262,7 @@
 				<div class="col-lg-7 col-md-12 col-sm-12">
 					<form>
 						<input type="text" name="Text" placeholder="Insira o seu endereço de email...">
-						<button>Subscribe</button>
+						<button>Se inscrever</button>
 					</form>
 				</div>
 			</div>
@@ -307,9 +276,8 @@
 			<div class="copy-right">
 				<div class="social">
 					<ul class="social-medias">
-						<li><a href="JavaScript:void(0)"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-						<li><a href="JavaScript:void(0)"><img src="~/images/twitter.svg" alt="twitter"></a></li>
-						<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+						<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+						<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
 					</ul>
 				</div>
 				<div class="footer-rights">
