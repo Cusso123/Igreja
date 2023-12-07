@@ -10,7 +10,7 @@
 	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
 	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="https://via.placeholder.com/60x50">
+	<link rel="icon" type="image/x-icon" href="~/images/LogoIPB60x50.png">
 	<!-- Slick Slider -->
 	<link rel="stylesheet" type="text/css" href="~/css/slick.css">
 	<!-- Animate -->
@@ -34,14 +34,14 @@
 				<div class="row">
 					<div class="col-lg-9">
 						<ul class="login">
-							<li><a href="JavaScript:void(0)"><img src="~/images/user-profile.svg" alt="User Profile">Faça login ou cadastre-se</a></li>
+							<li><a asp-controller="Autenticar" asp-action="Index"><img src="~/images/user-profile.svg" alt="User Profile">Faça login ou cadastre-se</a></li>
 							<li><a href="JavaScript:void(0)"><img src="~/images/bell.svg" alt="Bell">Apresentar O Evangelho De Jesus Cristo De Forma A Alcançar Novos Discípulos</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-2 offset-1">
 						<ul class="social-medias">
-							<li><a href="JavaScript:void(0)"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-							<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+							<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+							<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -54,7 +54,7 @@
 						<nav>
 							<div class="logo">
 								<a href="index.html">
-									<img src="https://via.placeholder.com/185x70" alt="Logo">
+									<img src="~/images/LogoIPB185x70.png" alt="Logo">
 								</a>
 							</div>
 							<div class="nav-bar">
@@ -62,27 +62,29 @@
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Home</a>
 									<ul class="sub-menu">
-										<li><a href="index.html">Home</a></li>
+											<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
 									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
 									<ul class="sub-menu">
-										<li><a href="events.html">Biblia</a></li>
+											<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
 									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
 									<ul class="sub-menu">
-										<li><a href="sermons.html">Sermão</a></li>
-										<li><a href="sermon-detail.html">Sermão </a></li>
+											<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
 									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
 									<ul class="sub-menu">
-										<li><a href="blog.html">Blog</a></li>
+											<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
 									</ul>
 								</li>
-								<li><a href="contact-us.html">Contato</a></li>
+									<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
 							</ul>
+							</div>
+							<div class="donation">
+								<a href="JavaScript:void(0)"><svg version="1.1" id="profile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19.738 19.738" style="enable-background:new 0 0 ;" xml:space="preserve"> <g> <path d="M18.18,19.738h-2c0-3.374-2.83-6.118-6.311-6.118s-6.31,2.745-6.31,6.118h-2 c0-4.478,3.729-8.118,8.311-8.118C14.451,11.62,18.18,15.26,18.18,19.738z" /> <path d="M9.87,10.97c-3.023,0-5.484-2.462-5.484-5.485C4.385,2.461,6.846,0,9.87,0 c3.025,0,5.486,2.46,5.486,5.485S12.895,10.97,9.87,10.97z M9.87,2C7.948,2,6.385,3.563,6.385,5.485S7.948,8.97,9.87,8.97 c1.923,0,3.486-1.563,3.486-3.485S11.791,2,9.87,2z" /> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></a>
 							</div>
 							<div id="nav-icon4">
 							  <span></span>
@@ -97,33 +99,33 @@
 		<div class="mobile-nav" id="mobile-nav">
 			<div class="res-log">
 				<a href="index.html">
-					<img src="https://via.placeholder.com/185x70" alt="Responsive Logo">
+					<img src="~/images/LogoIPB185x70.png" alt="Responsive Logo">
 				</a>
 			</div>
 			<ul>
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Home</a>
 									<ul class="sub-menu">
-										<li><a href="index.html">Home</a></li>
+						<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
 									</ul>
 								</li>
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Biblia</a>
 									<ul class="sub-menu">
-										<li><a href="events.html">Biblia</a></li>
+						<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
 									</ul>
 								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermons</a>
+								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
 									<ul class="sub-menu">
-										<li><a href="sermons.html">Our Sermons</a></li>
+						<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
 									</ul>
 								</li>
 								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
 									<ul class="sub-menu">
-										<li><a href="blog.html">Blog</a></li>
+						<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
 									</ul>
 								</li>
-								<li><a href="contact-us.html">Contato</a></li>
+				<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
 							</ul>
 			<a href="JavaScript:void(0)" id="res-cross"></a>
 		</div>
@@ -133,24 +135,12 @@
         <section class="hero-one">
 			<div class="hero-one-slider">
 				<div>
-					<img src="https://via.placeholder.com/1920x810" alt="hero-one-slider">
+				<video controls autoplay="autoplay">
+				<source src="~/videos/IgrejaVideoTop.mp4" type="video/mp4" alt="hero-one-slider">
+				</video>
 					<div class="hero-data text-center">
-						<h1>Worship That<br> is Pleasing to God</h1>
-						<p>God has given us power and authority.</p>
-					</div>
-				</div>
-				<div>
-					<img src="https://via.placeholder.com/1920x810" alt="hero-one-slider">
-					<div class="hero-data text-center">
-						<h1>We Love God<br> We Belive in God</h1>
-						<p>There is no other way except jesus.</p>
-					</div>
-				</div>
-				<div>
-					<img src="https://via.placeholder.com/1920x810" alt="hero-one-slider">
-					<div class="hero-data text-center">
-						<h1>Love God<br> Love Doing Good</h1>
-						<p>We are a church that belives in Jesus christ.</p>
+						<h1>Igreja Presbiteriana de Araxá<br></h1>
+						<p>Sejam Bem-Vindos!</p>
 					</div>
 				</div>
 			</div>
@@ -160,7 +150,7 @@
 	<!-- Fellowship Start -->
 	<section class="gap fellowship">
 		<div class="container">
-			<h2 class="text-center mx-auto">We Gather for Inspiration, Fellowship, and Guidance in the of Christian Discipleship.</h2>
+			<h2 class="text-center mx-auto">Nós nos reunimos para inspiração, comunhão e orientação no discipulado cristão.</h2>
 			<div class="row">
 				<div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
 					<div class="offer text-center">
@@ -168,8 +158,8 @@
 							<img src="~/images/wedding.svg" alt="Wedding">
 						</span>
 
-						<h3><a href="JavaScript:void(0)">Praise & Worship</a></h3>
-						<p class="mx-auto">Our church is open and friendly with many social activities. To keep our church running smoothly.</p>
+						<h3><a href="JavaScript:void(0)">Missão</a></h3>
+						<p class="mx-auto">Vida cristã autêntica, em comunhão com Cristo – o Senhor da Igreja;</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700">
@@ -177,8 +167,8 @@
 						<span>
 							<img src="~/images/pray.svg" alt="Pray">
 						</span>
-						<h3><a href="JavaScript:void(0)">Connect Members</a></h3>
-						<p class="mx-auto">Our church is open and friendly with many social activities. To keep our church running smoothly.</p>
+						<h3><a href="JavaScript:void(0)">Visão</a></h3>
+						<p class="mx-auto">Apresentar o Evangelho de Jesus Cristo de forma a alcançar novos discípulos.</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
@@ -186,63 +176,102 @@
 						<span>
 							<img src="~/images/bird.svg" alt="Bird">
 						</span>
-						<h3><a href="JavaScript:void(0)">Parent’s Love</a></h3>
-						<p class="mx-auto">Our church is open and friendly with many social activities. To keep our church running smoothly.</p>
+						<h3><a href="JavaScript:void(0)">Valores</a></h3>
+						<p class="mx-auto">Compromisso com o Reino de Deus e fidelidade à sua Palavra.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Fellowship End -->
+	<!-- CountDown Start -->
+	<div class="theme-bg-clr countdown">
+		<div class="parallax pattren" src="~/images/Pattren.jpg"></div>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+					<div class="counter-data">
+						<a href="JavaScript:void(0)" class="d-flex text-white w-lg-75 font-bold">Proximo momento solene de adoração a Deus</a>
+						<ul>
+							<li><svg fill="#fff" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m448 64h-21.332031v-42.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031h-21.332031c-11.777344 0-21.332031 9.558594-21.332031 21.332031v42.667969h-213.335938v-42.667969c0-11.773437-9.554687-21.332031-21.332031-21.332031h-21.332031c-11.777344 0-21.335938 9.558594-21.335938 21.332031v42.667969h-21.332031c-35.285156 0-64 28.714844-64 64v320c0 35.285156 28.714844 64 64 64h384c35.285156 0 64-28.714844 64-64v-320c0-35.285156-28.714844-64-64-64zm21.332031 384c0 11.753906-9.578125 21.332031-21.332031 21.332031h-384c-11.753906 0-21.332031-9.578125-21.332031-21.332031v-233.8125h426.664062zm0 0" /></svg>Domingo, 10 de dezembro de 2023</li>
+							<li><svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 0c-4.962 0-9 4.066-9 9.065 0 7.103 8.154 14.437 8.501 14.745.143.127.321.19.499.19s.356-.063.499-.189c.347-.309 8.501-7.643 8.501-14.746 0-4.999-4.038-9.065-9-9.065zm0 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" /></svg>R. Calimério Guimarães, 307 - Centro, Araxá</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+					<div id="countdown">
+						<div id='tiles'></div>
+						<ul class="labels">
+							<li>Days</li>
+							<li>Hours</li>
+							<li>Mins</li>
+							<li>Secs</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- CountDown End -->
 	<!-- About One Start -->
 	<section class="gap no-top about-one">
 		<div class="container">
 			<div class="row align-items-end">
 				<div class="col-lg-6 col-md-12 col-sm-12">
 					<div class="about-data">
-						<h2>A Church that Loves God and People</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit totam rem ape eaque ipsa quae ab illo inven tore Loaper eaque ipsa quae ab illo invento eaqu e ipsa quae ab ille a que ipsa quae ab illo inventore.</p>
-						<a href="about-us.html" class="theme-btn">More About us</a>
+						<h2>Quem Somos</h2>
+						<p>
+							A igreja Presbiteriana de Araxá está há mais de 80 anos localizada na rua Calimério Guimarães.
+							Tem como ênfase a busca do conhecimento da Palavra de Deus, a Bíblia sagrada, e tem como meta a celebração de um culto bíblico, que promova, em sua adoração pública, o mais alto ideal – a Glória de Deus!
+							A igreja Presbiteriana é um ramo da Reforma Protestante do século XVI, que anuncia a soberania de Deus, bem como cinco princípios importantes: Só a fé, só a graça, só Cristo, Só a Palavra e Só a Deus glória!
+						</p>
 					</div>
 					<div class="about-gallery gallery">
 						<figure>
-							<img src="https://via.placeholder.com/300x200" alt="about image">
-							<a data-fancybox="gallery" href="https://via.placeholder.com/300x200"><img src="~/images/plus.svg" alt="Plus"></a>
+							<img src="https://ipbaraxa.com.br/wp-content/uploads/2022/12/grupos-pequenos.jpg" alt="about image">
+							<a data-fancybox="gallery" src="https://ipbaraxa.com.br/wp-content/uploads/2022/12/grupos-pequenos.jpg"><img src="~/images/plus.svg" alt="Plus"></a>
 						</figure>
 						<figure>
-							<img src="https://via.placeholder.com/300x200" alt="about image">
-							<a data-fancybox="gallery" href="https://via.placeholder.com/300x200"><img src="~/images/plus.svg" alt="Plus 1"></a>
+							<img src="https://ipbaraxa.com.br/wp-content/uploads/2022/12/grupos-pequenos-2.jpg" alt="about image">
+							<a data-fancybox="gallery" src="https://ipbaraxa.com.br/wp-content/uploads/2022/12/grupos-pequenos-2.jpg"><img src="~/images/plus.svg" alt="Plus 1"></a>
 						</figure>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-12 col-sm-12">
 					<div class="prayers-slider green-bg">
 						<div>
-							<img class="img-fluid w-100" src="https://via.placeholder.com/570x425" alt="About Image">
+							<img class="img-fluid w-100" src="https://ipbaraxa.com.br/wp-content/uploads/2022/11/ump-ipbaraxa-03.jpg" alt="About Image">
 							<div class="slider-data">
-								<h2 class="text-white">O Lord, you have searched me out and known me; you know my sitting down and my rising up.</h2>
-								<h3 class="text-white">Psalm 139: 1-2</h3>
+								<h2 class="text-white">UMP Jovens</h2>
+								<h3 class="text-white">União de Mocidade Presbiteriana</h3>
 							</div>
 						</div>
 						<div>
-							<img class="img-fluid w-100" src="https://via.placeholder.com/570x425" alt="about image 1">
+							<img class="img-fluid w-100" src="https://ipbaraxa.com.br/wp-content/uploads/2022/11/upa-ipbaraxa-03.jpg" alt="about image 1">
 							<div class="slider-data">
-								<h2 class="text-white">Unless the Lord builds the house, those who build it labour in vain.</h2>
-								<h3 class="text-white">Psalm 127: 1-2</h3>
+								<h2 class="text-white">UPA</h2>
+								<h3 class="text-white">União Presbiteriana de Adolescentes</h3>
 							</div>
 						</div>
 						<div>
-							<img class="img-fluid w-100" src="https://via.placeholder.com/570x425" alt="about image 3">
+							<img class="img-fluid w-100" src="https://ipbaraxa.com.br/wp-content/uploads/2022/11/UHP-1024x767.jpg" alt="about image 3">
 							<div class="slider-data">
-								<h2 class="text-white">God is with you, wherever you may be and whatever you may choose to do.</h2>
-								<h3 class="text-white">Psalm 127: 1-2</h3>
+								<h2 class="text-white">UPH</h2>
+								<h3 class="text-white">União Presbiteriana de Homens</h3>
 							</div>
 						</div>
 						<div>
-							<img class="img-fluid w-100" src="https://via.placeholder.com/570x425" alt="about image 4">
+							<img class="img-fluid w-100" src="https://ipbaraxa.com.br/wp-content/uploads/2022/11/0e041ae2-d558-485e-9d9f-c6e5b1dc104e-1024x766.jpg" alt="about image 4">
 							<div class="slider-data">
-								<h2 class="text-white">Any concern too small to be turned into a prayer is too small to be made into a burden.</h2>
-								<h3 class="text-white">Corrie Ten Boom</h3>
+								<h2 class="text-white">UCP</h2>
+								<h3 class="text-white">União de Crianças Presbiterianas</h3>
+							</div>
+						</div>
+						<div>
+							<img class="img-fluid w-100" src="https://ipbaraxa.com.br/wp-content/uploads/2022/11/d38079bd-c8ef-4019-9f39-0de66d9606e4.jpg" alt="about image 4">
+							<div class="slider-data">
+								<h2 class="text-white">SAF</h2>
+								<h3 class="text-white">Sociedade Auxiliadora Feminina</h3>
 							</div>
 						</div>
 					</div>
@@ -253,52 +282,148 @@
 	<!-- About One End -->
 	<!-- Digital Ministry Start -->
 	<section class="gap digital-ministry green-overlay">
-		<div class="parallax" style="background-image: url(https://via.placeholder.com/1920x730);"></div>
+		<div class="parallax" img src="~/images/IPB1920x730.jpg"></div>
 		<div class="container">
 			<div class="heading">
-				<h2 class="text-white mx-auto">Digital Ministry - Live Services Bible Study Recorded Streams</h2>
+				<h2 class="text-white mx-auto">Ministério Digital - Transmissões gravadas de estudos bíblicos de serviços ao vivo</h2>
 			</div>
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-12">
 					<div class="dg-counter text-center">
-						<h3 class="text-white"><span class="counter">140</span></h3>
-						<p class="text-white mx-auto">countries around the world benefit from work</p>
+						<h3 class="text-white"><span class="counter">607</span></h3>
+						<p class="text-white mx-auto">Vídeos</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12">
 					<div class="dg-counter text-center">
-						<h3 class="text-white"><span class="counter">4,753</span></h3>
-						<p class="text-white mx-auto">countries around the world benefit from work</p>
+						<h3 class="text-white"><span class="counter">42.742</span></h3>
+						<p class="text-white mx-auto">visualizações</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12">
 					<div class="dg-counter text-center">
-						<h3 class="text-white"><span class="counter">1.4</span>m</h3>
-						<p class="text-white mx-auto">countries around the world benefit from work</p>
+						<h3 class="text-white"><span class="counter">546</span></h3>
+						<p class="text-white mx-auto">Inscritos</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12">
 					<div class="dg-counter text-center">
-						<h3 class="text-white"><span class="counter">2470</span></h3>
-						<p class="text-white mx-auto">countries around the world benefit from work</p>
+						<h3 class="text-white"><span class="counter">3</span></h3>
+						<p class="text-white mx-auto">Congregações</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Digital Ministry End -->
-	<!-- Subscribe Start -->
-	<section class="subscribe">
+	<!-- Pastor Start -->
+	<section class="gap no-top pastor">
 		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-5 col-md-12 col-sm-12">
-					<h3 class="text-white">Vamos manter contato!</h3>
-					<p class="text-white">Inscreva-se para ficar por dentro das últimas notícias e atualizações interessantes.</p>
+			<div class="heading">
+				<img src="~/images/SimboloPresbiteriana50x65.png" alt="Heading Image">
+				<h2>Conheça nossos pastores</h2>
+			</div>
+			<div class="row margin justify-content-center">
+				<div class="col-lg-4 col-md-6 col-sm-12 p-lg-0">
+					<div class="profile">
+						<img class="img-fluid w-100" src="~/images/RevClodoaldo.png" alt="Pastor Image">
+						<div class="meta green-bg">
+							<a class="font-bold text-white" href="pastor-detail.html">Clodoaldo Caldas</a>
+							<p class="font-bold text-white">Pastor Titular</p>
+							<div class="social">
+								<ul class="social-medias">
+									<li><a href="https://www.instagram.com/clodoaldocaldas"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-lg-7 col-md-12 col-sm-12">
+				<div class="col-lg-4 col-md-6 col-sm-12 p-lg-0">
+					<div class="profile">
+						<img class="img-fluid w-100" src="~/images/RevJefferson.png" alt="Pastor Image">
+						<div class="meta green-bg">
+							<a class="font-bold text-white" href="pastor-detail.html">Jefferson Lemos</a>
+							<p class="font-bold text-white">Pastor Auxiliar</p>
+							<div class="social">
+								<ul class="social-medias">
+									<li><a href="https://www.instagram.com/jeffersonla"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 p-lg-0">
+					<div class="profile">
+						<img class="img-fluid w-100" src="~/images/RevSamuel.png" alt="Pastor Image">
+						<div class="meta green-bg">
+							<a class="font-bold text-white" href="pastor-detail.html">Samuel Barros</a>
+							<p class="font-bold text-white">Pastor Auxiliar</p>
+							<div class="social">
+								<ul class="social-medias">
+									<li><a href="JavaScript:void(0)"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Pastor End -->
+	<!-- Mass Timing Start -->
+	<section class="gap mass-timing light-bg">
+		<div class="container">
+			<div class="row">
+				<div class="head">
+					<div class="meta">
+						<p>CONFIRA OS</p>
+						<h2>HORÁRIOS DE CULTOS</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="expand">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Quarta</th>
+						<th scope="col">Sabado</th>
+						<th scope="col">Domingo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><span>09:00</span>Escola Biblica Dominical</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><span>19:30</span>Estudo Biblico</td>
+						<td><span>19:30</span>Reunião de Jovens</td>
+						<td><span>19:30</span>Culto Solene</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<!-- Mass Timing End -->
+	<!-- Subscribe Start -->
+	<section class="gap subscribe-two">
+		<div class="container">
+			<div class="row">
+				<div class="data">
+					<h2>Adoramos orar por você!</h2>
+					<p class="m-auto font-bold">Envie-nos seu pedido de oração ou sugestão no nosso e-mail <span>ipasecretaria18@gmail.com</span></p>
 					<form>
-						<input type="text" name="Text" placeholder="Insira o seu endereço de email...">
-						<button>Subscribe</button>
+						<div class="shape">
+							<input type="text" name="Text" placeholder="Por favor, digite sua oração...">
+						</div>
+						<button type="submit" class="theme-btn">Enviar Oração</button>
 					</form>
 				</div>
 			</div>
@@ -324,7 +449,7 @@
 	</footer>
 	<!-- Footer One End -->
 	<!-- Scroll to top -->
-	<button id="scrollTop" class="scrollTopStick"><svg viewBox="0 0 490.523 490.523" fill="#fff" height="15"> <path style="fill:#FFC107;" d="M487.411,355.047L252.744,120.38c-4.165-4.164-10.917-4.164-15.083,0L2.994,355.047 c-4.093,4.237-3.976,10.99,0.262,15.083c4.134,3.993,10.687,3.993,14.821,0l227.115-227.115l227.115,227.136 c4.237,4.093,10.99,3.976,15.083-0.261c3.993-4.134,3.993-10.688,0-14.821L487.411,355.047z"></path> <path d="M479.859,373.266c-2.831,0.005-5.548-1.115-7.552-3.115L245.192,143.015L18.077,370.151 c-4.237,4.093-10.99,3.976-15.083-0.262c-3.993-4.134-3.993-10.687,0-14.821l234.667-234.667c4.165-4.164,10.917-4.164,15.083,0 l234.667,234.667c4.159,4.172,4.148,10.926-0.024,15.085C485.388,372.146,482.681,373.265,479.859,373.266z"></path> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></button>
+	<button id="scrollTop" class="scrollTopStick"><svg viewBox="0 0 490.523 490.523" fill="#fff" height="15"> <path style="fill:#F000;" d="M487.411,355.047L252.744,120.38c-4.165-4.164-10.917-4.164-15.083,0L2.994,355.047 c-4.093,4.237-3.976,10.99,0.262,15.083c4.134,3.993,10.687,3.993,14.821,0l227.115-227.115l227.115,227.136 c4.237,4.093,10.99,3.976,15.083-0.261c3.993-4.134,3.993-10.688,0-14.821L487.411,355.047z"></path> <path d="M479.859,373.266c-2.831,0.005-5.548-1.115-7.552-3.115L245.192,143.015L18.077,370.151 c-4.237,4.093-10.99,3.976-15.083-0.262c-3.993-4.134-3.993-10.687,0-14.821l234.667-234.667c4.165-4.164,10.917-4.164,15.083,0 l234.667,234.667c4.159,4.172,4.148,10.926-0.024,15.085C485.388,372.146,482.681,373.265,479.859,373.266z"></path> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></button>
 	<!-- Jquery -->
 	<script src="~/js/jquery.min.js"></script>
 	<!-- Waypoint -->
