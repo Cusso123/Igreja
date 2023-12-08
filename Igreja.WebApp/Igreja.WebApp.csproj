@@ -8,9 +8,17 @@
 
   <ItemGroup>
     <Compile Remove="Views\Paginas\**" />
+    <Compile Remove="wwwroot\css\Imagem\**" />
     <Content Remove="Views\Paginas\**" />
+    <Content Remove="wwwroot\css\Imagem\**" />
     <EmbeddedResource Remove="Views\Paginas\**" />
+    <EmbeddedResource Remove="wwwroot\css\Imagem\**" />
     <None Remove="Views\Paginas\**" />
+    <None Remove="wwwroot\css\Imagem\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\abre versiculos.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\Imagem\" />
+    <Folder Include="wwwroot\js\Livros\" />
     <Folder Include="wwwroot\music\" />
     <Folder Include="wwwroot\videos\" />
   </ItemGroup>
