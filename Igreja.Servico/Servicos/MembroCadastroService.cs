@@ -48,7 +48,5 @@ namespace Igreja.Servico.Servicos
             return _contexto.BuscarPorId(id);
 
         }
-
-        
     }
 }

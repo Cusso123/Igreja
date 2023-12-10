@@ -14,9 +14,6 @@ namespace Igreja.WebApp.Models
         public string Email { get; set; }
         [Required(ErrorMessage = "Digite a senha")]
         public string Senha { get; set; }
-
-		public int PerfilID { get; set; }
-
 		public bool SenhaValida(string senha) { return Senha == senha; }
     }
 }

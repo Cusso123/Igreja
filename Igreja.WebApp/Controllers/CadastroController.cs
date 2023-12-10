@@ -102,8 +102,8 @@ namespace Igreja.WebApp.Controllers
         // Criar Membro
 
         [HttpPost]
- public IActionResult CadastroMembro(MembroCadastroViewModel membroView) 
-    {
+        public IActionResult CadastroMembro(MembroCadastroViewModel membroView) 
+        {
 
 
         try
@@ -116,8 +116,7 @@ namespace Igreja.WebApp.Controllers
                         Login = membroView.Login,
                         Email = membroView.Email,
                         Senha = membroView.Senha,
-                        PerfilID = membroView.PerfilID
-                    
+                                           
                 };
 
                 _membroCadastroService.Adicionar(membro);
@@ -129,7 +128,7 @@ namespace Igreja.WebApp.Controllers
 
             }
             catch (Exception erro) { TempData["MensagemErro"] = $"Ops, houve um erro ao cadastrar a pessoa,tente novamente. Erro:  {erro.Message}";
-                return RedirectToAction("Index","Autenticar", membroView);
+                return RedirectToAction("Index","Cadastro", membroView);
             }
             
         

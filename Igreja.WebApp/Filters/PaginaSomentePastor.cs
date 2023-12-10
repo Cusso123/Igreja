@@ -24,11 +24,6 @@ namespace Igreja.WebApp.Filters
                 {
                     context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Index" } });
                 }
-
-                if (membro.PerfilID != 1)
-                {
-                    context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Restrito" }, { "action", "Index" } });
-                }
             }
 
 

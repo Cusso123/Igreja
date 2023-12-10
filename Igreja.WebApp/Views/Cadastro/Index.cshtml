@@ -45,19 +45,16 @@
                 <h1>Cadastro</h1>
                 <i id="mode_icon" class="fa-solid fa-moon"></i>
             </div>
-            <!-- INPUTS -->
-            <div id="inputs">
                 <!-- NAME -->
-                <div class="input-box">
+            <div class="input-box">
                     <label for="nome">
-                        Nome
+                            Nome
                         <div class="input-field">
                             <i class="fa-solid fa-user"></i>
                             <input type="text" asp-for="Nome" class="form-control" placeholder="Digite seu nome" aria-label="Digite seu nome" aria-describedby="basic-addon1" id="nome" name="Nome">
                             @Html.ValidationMessageFor(x => x.Nome)
                         </div>
                     </label>
-                    <div class="input-box">
                         <label for="login">
                             Login
                             <div class="input-field">
@@ -66,10 +63,7 @@
                                 @Html.ValidationMessageFor(x => x.Login)
                             </div>
                         </label>
-                </div>
-
                 <!-- EMAIL -->
-                <div class="input-box">
                     <label for="email">
                         E-mail
                         <div class="input-field">
@@ -78,10 +72,7 @@
                                 @Html.ValidationMessageFor(x => x.Email)
                        </div>
                     </label>
-                </div>
-
                 <!-- PASSWORD -->
-                <div class="input-box">
                     <label for="senha">
                         Senha
                         <div class="input-field">
@@ -89,38 +80,17 @@
                             <input type="password" asp-for="Senha" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="Senha">
                             @Html.ValidationMessageFor(x => x.Senha)
                         </div>
-
                     </label>
-                        <div class="input-box">
-                            <div class="text-field">
-                                <div class="custom-label">
-                                    <span>Perfil</span>
-                                </div>
-                                <select class="form-select" id="perfilDropdown">
-                                    <option value="">-- Selecione --</option>
-                                    <option value="1">Pastor</option>
-                                    <option value="2">Membro</option>
-                                </select>
-                                <input type="Perfil" asp-for="PerfilID" />
-                                <div class="text-danger" id="perfilValidationMessage"></div>
-                            </div>
-                        </div>
-
-
                     <!-- FORGOT PASSWORD -->
                     <div id="forgot_password">
                         <a asp-controller="Login" asp-action="Index">
                             Ja possui cadastro?
                         </a>
                     </div>
-                </div>
-            </div>
-
+            </div class="input-box">
             <!-- Cadastrar BUTTON -->
             <button type="submit" id="login_button">
-             
                     Cadastrar
-                    
             </button>
         </form>
     </main>

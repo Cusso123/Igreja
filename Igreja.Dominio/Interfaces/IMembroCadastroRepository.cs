@@ -18,8 +18,5 @@ namespace Igreja.Dominio.Interfaces
         public MembroCadastro BuscarPorEmail(string email);
         public IEnumerable<MembroCadastro> GetAll();
         public MembroCadastro BuscarPorId(int id);
-     
-
-
     }
 }

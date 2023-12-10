@@ -8,7 +8,6 @@ namespace Igreja.Dados
     public class Contexto : DbContext
     {
         public DbSet<MembroCadastro> Membro { get; set; }
-        public DbSet<Perfil> Perfil { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -18,13 +17,10 @@ namespace Igreja.Dados
                                         User ID = RA044983; 
                                         Password = 044983;
                                         TrustServerCertificate = True");
-
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MembroCadastroConfiguration());
-            modelBuilder.ApplyConfiguration(new PerfilConfiguration());
         }
 
     }
