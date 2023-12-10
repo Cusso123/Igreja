@@ -10,10 +10,15 @@ namespace Igreja.Dominio.Interfaces
     public interface IMembroCadastroRepository
     {
 
-        public void AdicionarMembro(MembroCadastro membro_cadastro);
-        public void RemoverMembro(int membro_id);
-        public MembroCadastro GetOneById(int membro_id);
+        public void  Adicionar(MembroCadastro membro_cadastro);
+        public int EncontrarProximoIDDisponivel();
+        public void Atualizar(MembroCadastro membro_cadastro);
+       
+        public void ApagarMembro(int id);
+        public MembroCadastro BuscarPorEmail(string email);
         public IEnumerable<MembroCadastro> GetAll();
+        public MembroCadastro BuscarPorId(int id);
+     
 
 
     }

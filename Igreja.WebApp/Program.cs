@@ -3,27 +3,45 @@ using Igreja.Dominio.Servicos;
 using Igreja.Dados;
 using Igreja.Dados.Repository;
 using Igreja.Servico.Servicos;
+using Igreja.Dados.EntityFramework;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Igreja.WebApp.Helper.Sessão;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+
 builder.Services.AddDbContext<Contexto>();
+
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<ISessao, Sessao>();
+
 builder.Services.AddScoped<IMembroCadastroRepository, MembroCadastroRepository>();
 builder.Services.AddScoped<IMembroCadastroService, MembroCadastroService>();
-builder.Services.AddSession();
+//builder.Services.AddScoped<ILoginRepository, LoginService>();
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<BibleContext>(options =>
-    options.UseSqlServer(connectionString));
+
+
+builder.Services.AddSession(o =>
+{
+    o.Cookie.HttpOnly = true;
+    o.Cookie.IsEssential = true;
+});
+
+
 
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -40,6 +58,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Inicio}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

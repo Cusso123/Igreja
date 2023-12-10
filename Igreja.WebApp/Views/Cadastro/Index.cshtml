@@ -1,0 +1,147 @@
+﻿@using Igreja.WebApp.Models
+@model MembroCadastroViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="~/css/style1.css">
+
+    <title>Login Dark/Light Mode</title>
+    <style>
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .text-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .text-danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <main id="container">
+        <form asp-action="CadastroMembro" asp-controller="Cadastro" method="post" id="login_form">
+            <!-- FORM HEADER -->
+            <div id="form_header">
+                <h1>Cadastro</h1>
+                <i id="mode_icon" class="fa-solid fa-moon"></i>
+            </div>
+            <!-- INPUTS -->
+            <div id="inputs">
+                <!-- NAME -->
+                <div class="input-box">
+                    <label for="nome">
+                        Nome
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" asp-for="Nome" class="form-control" placeholder="Digite seu nome" aria-label="Digite seu nome" aria-describedby="basic-addon1" id="nome" name="Nome">
+                            @Html.ValidationMessageFor(x => x.Nome)
+                        </div>
+                    </label>
+                    <div class="input-box">
+                        <label for="login">
+                            Login
+                            <div class="input-field">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="login" asp-for="Login" class="form-control" placeholder="Digite o login" aria-label="Digite o login" aria-describedby="basic-addon1" id="senha" name="Login">
+                                @Html.ValidationMessageFor(x => x.Login)
+                            </div>
+                        </label>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="input-box">
+                    <label for="email">
+                        E-mail
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="Email">
+                                @Html.ValidationMessageFor(x => x.Email)
+                       </div>
+                    </label>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="input-box">
+                    <label for="senha">
+                        Senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" asp-for="Senha" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="Senha">
+                            @Html.ValidationMessageFor(x => x.Senha)
+                        </div>
+
+                    </label>
+                        <div class="input-box">
+                            <div class="text-field">
+                                <div class="custom-label">
+                                    <span>Perfil</span>
+                                </div>
+                                <select class="form-select" id="perfilDropdown">
+                                    <option value="">-- Selecione --</option>
+                                    <option value="1">Pastor</option>
+                                    <option value="2">Membro</option>
+                                </select>
+                                <input type="Perfil" asp-for="PerfilID" />
+                                <div class="text-danger" id="perfilValidationMessage"></div>
+                            </div>
+                        </div>
+
+
+                    <!-- FORGOT PASSWORD -->
+                    <div id="forgot_password">
+                        <a asp-controller="Login" asp-action="Index">
+                            Ja possui cadastro?
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cadastrar BUTTON -->
+            <button type="submit" id="login_button">
+             
+                    Cadastrar
+                    
+            </button>
+        </form>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript" src="~/js/site.js"></script>
+
+    <script>
+        // Exemplo simples de validação em JavaScript
+        document.getElementById("perfilDropdown").addEventListener("change", function () {
+            var selectedValue = this.value;
+            var validationMessageElement = document.getElementById("perfilValidationMessage");
+
+            if (selectedValue === "") {
+                validationMessageElement.textContent = "Digite seu perfil";
+                // Outras lógicas de validação podem ser adicionadas conforme necessário
+            } else {
+                validationMessageElement.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -14,28 +14,41 @@ namespace Igreja.Dados.EntityFramework.Configuration
         public void Configure(EntityTypeBuilder<MembroCadastro> builder)
         {
             builder.ToTable("Membro");
-            builder.HasKey(m => m.MembroID);
+            builder.HasKey(m => m.Id);
 
             builder
-                .Property(m => m.MembroID)
-                .HasColumnName("MembroID")
+                .Property(m => m.Id)
+                .HasColumnName("ID")
                 .HasColumnType("int");
 
             builder
                 .Property(m => m.Nome)
-                .HasColumnName("Name")
+                .HasColumnName("Nome")
                 .HasColumnType("varchar(200)");
+
+            builder
+                .Property(m => m.Login)
+                .HasColumnName("Login")
+                .HasColumnType("varchar(50");
+
+            builder
+                .Property(m => m.Email)
+                .HasColumnName("Email")
+                .HasColumnType("varchar(200)");
+
 
             builder
                 .Property(m => m.Senha)
                 .HasColumnName("Senha")
                 .HasColumnType("varchar(200)");
 
-
             builder
-                .Property(m => m.Email)
-                .HasColumnName("Email")
-                .HasColumnType("varchar(100)");
+               .HasOne(e => e.Perfil)
+               .WithMany()
+               .HasForeignKey(e => e.PerfilID);
+
+
+
         }
 
     }

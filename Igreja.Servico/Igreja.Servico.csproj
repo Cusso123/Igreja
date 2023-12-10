@@ -9,9 +9,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Sytem.WebPackage" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Igreja.Dados\Igreja.Dados.csproj" />
     <ProjectReference Include="..\Igreja.Dominio\Igreja.Dominio.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,67 @@
+﻿@model MembroCadastroViewModel
+
+
+<main id="container">
+    <form asp-action="AtualizarMembro" asp-controller="Cadastro" method="get" id="login_form">
+        <!-- FORM HEADER -->
+        <div id="form_header">
+            <h1>Editar</h1>
+            <i id="mode_icon" class="fa-solid fa-moon"></i>
+        </div>
+        <!-- INPUTS -->
+            <!-- NAME -->
+            <div class="input-box">
+                <label for="nome">
+                    Nome
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite seu nome" aria-label="Digite seu nome" aria-describedby="basic-addon1" id="nome" name="Nome">
+                        @Html.ValidationMessageFor(x => x.Nome)
+                    </div>
+                </label>
+                <div class="input-box">
+                    <label for="login">
+                        Login
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="login" asp-for="Login" class="form-control" placeholder="Digite o login" aria-label="Digite o login" aria-describedby="basic-addon1" id="senha" name="Login">
+                            @Html.ValidationMessageFor(x => x.Login)
+                        </div>
+                    </label>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="input-box">
+                    <label for="email">
+                        E-mail
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="Email">
+                            @Html.ValidationMessageFor(x => x.Email)
+                        </div>
+                    </label>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="input-box">
+                    <label for="senha">
+                        Senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" asp-for="Senha" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="Senha">
+                            @Html.ValidationMessageFor(x => x.Senha)
+                        </div>
+                    </label>
+
+                   
+                </div>
+            </div>
+
+            <!-- Cadastrar BUTTON -->
+            <button type="submit" id="login_button">
+
+                Cadastrar
+
+            </button>
+    </form>
+</main>

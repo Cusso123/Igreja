@@ -11,33 +11,55 @@ namespace Igreja.Dados.Repository
 {
     public class MembroCadastroRepository : IMembroCadastroRepository
     {
-        private readonly Contexto Contexto;
+        Contexto Contexto { get; set; }
         public MembroCadastroRepository(Contexto contexto) { Contexto = contexto; }
-        public void AdicionarMembro(MembroCadastro membro_cadastro)
+        public void Adicionar(MembroCadastro membro_cadastro)
         {
-            Contexto.MembroCadastro.Add(membro_cadastro);
+            Contexto.Membro.Add(membro_cadastro);
+            Contexto.SaveChanges();
+        }
+        public int EncontrarProximoIDDisponivel()
+        {
+            var idsExistentes = Contexto.Membro.Select(p => p.Id).ToList();
+            int proximoID = 1;
+
+            while (idsExistentes.Contains(proximoID))
+            {
+                proximoID++;
+            }
+
+            return proximoID;
+        }
+
+        public void Atualizar(MembroCadastro membro_cadastro)
+        {
+            Contexto.Membro.Update(membro_cadastro);
             Contexto.SaveChanges();
         }
 
-        public MembroCadastro GetOneById(int membro_id)
+        public MembroCadastro BuscarPorId(int id)
         {
-            return Contexto.MembroCadastro.First(m => m.MembroID == membro_id);
+            return Contexto.Membro.First(m => m.Id == id);
+        }
+
+        public void ApagarMembro(int id)
+        {
+            var membro = Contexto.Membro.FirstOrDefault(p => p.Id.Equals(id));
+            if (membro != null)
+            {
+                Contexto.Membro.Remove(membro);
+                Contexto.SaveChanges();
+            }
+        }
+
+        public MembroCadastro BuscarPorEmail(string email)
+        {
+            return Contexto.Membro.FirstOrDefault(p => p.Email == email);
         }
 
         public IEnumerable<MembroCadastro> GetAll()
         {
-            return Contexto.MembroCadastro.Where(a => true);
-        }
-
-
-        public void RemoverMembro(int membro_id)
-        {
-            var mem = Contexto.MembroCadastro.FirstOrDefault(m => m.MembroID.Equals(membro_id));
-            if (mem is not null)
-            {
-                Contexto.MembroCadastro.Remove(mem);
-                Contexto.SaveChanges();
-            }
+            return Contexto.Membro.Where(p => true);
         }
     }
 }

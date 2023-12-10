@@ -1,5 +1,13 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+@model LoginViewModel
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,23 +18,28 @@
 
     <title>Login Dark/Light Mode</title>
 </head>
-<body>
-    <main id="container">
-        <form id="login_form">
-            <!-- FORM HEADER -->
-            <div id="form_header">
-                <h1>Login</h1>
-                <i id="mode_icon" class="fa-solid fa-moon"></i>
-            </div>
-            <!-- INPUTS -->
-            <div id="inputs">
+<main id="container">
+    <form asp-action="Entrar" asp-controller="Login" method="post" id="login_form">
+        <!-- FORM HEADER -->
+        <div id="form_header">
+            <h1>Login</h1>
+            <i id="mode_icon" class="fa-solid fa-moon"></i>
+        </div>
+        <!-- INPUTS -->
+        <div id="inputs">
+            <!-- NAME -->
+            <div class="input-box">
+              
+                
+
                 <!-- EMAIL -->
                 <div class="input-box">
                     <label for="email">
                         E-mail
                         <div class="input-field">
                             <i class="fa-solid fa-envelope"></i>
-                            <input type="email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="email">
+                            <input type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="Email">
+                            @Html.ValidationMessageFor(x => x.Email)
                         </div>
                     </label>
                 </div>
@@ -37,29 +50,28 @@
                         Senha
                         <div class="input-field">
                             <i class="fa-solid fa-key"></i>
-                            <input type="password" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="senha">
+                            <input type="password" asp-for="Senha" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="Senha">
+                            @Html.ValidationMessageFor(x => x.Senha)
                         </div>
                     </label>
 
                     <!-- FORGOT PASSWORD -->
                     <div id="forgot_password">
-                        <a asp-controller="Cadastro" asp-action="Cadastro">
-                            Não tem o cadastro?
+                        <a asp-controller="Cadastro" asp-action="Index">
+                            Não possui um cadastro?
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- LOGIN BUTTON -->
+            <!-- Cadastrar BUTTON -->
             <button type="submit" id="login_button">
-            <a asp-controller="Home" asp-action="Inicio">
-                Login
-            </a>
-            </button>
-        </form>
-    </main>
 
-    <!-- JAVASCRIPT -->
-    <script type="text/javascript" src="~/js/site.js"></script>
-</body>
-</html>
+                Login
+
+            </button>
+
+</form>
+</main>
+<!-- JAVASCRIPT -->
+<script type="text/javascript" src="~/js/site.js"></script>
