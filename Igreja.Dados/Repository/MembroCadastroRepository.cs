@@ -54,7 +54,12 @@ namespace Igreja.Dados.Repository
 
         public MembroCadastro BuscarPorEmail(string email)
         {
-            return Contexto.Membro.FirstOrDefault(p => p.Email == email);
+            return Contexto.Membro.FirstOrDefault(p => p.Email.Equals(email));
+        }
+
+        public MembroCadastro BuscarPorGuid(Guid owner)
+        {
+            return Contexto.Membro.FirstOrDefault(p => p.Owner == owner);
         }
 
         public IEnumerable<MembroCadastro> GetAll()

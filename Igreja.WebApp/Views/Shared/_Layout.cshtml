@@ -1,8 +1,39 @@
 ﻿
+
 <title>@ViewData["Title"] - Igreja.WebApp</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
+<!-- Animate on scroll -->
+<link rel="stylesheet" type="text/css" href="~/css/aos.css">
+<!-- Stylesheet -->
+<link rel="stylesheet" type="text/css" href="~/css/style.css">
+<!-- Colors -->
+<link rel="stylesheet" type="text/css" href="~/css/color.css">
+<!-- Responsive -->
+<link rel="stylesheet" type="text/css" href="~/css/responsive.css">
     <main role="main" class="pb-3">
+
+	<!-- Header One Start -->
+	<header class="header-one">
+		<div class="desktop-nav" id="stickyHeader">
+			<div class="container">
+				@await Component.InvokeAsync("Menu")
+			</div>
+		</div>
+	</header>
+	<!-- Header One End -->
+
         @RenderBody()
     </main>
+
+<script src="~/js/jquery.min.js"></script>
+<!-- Bootstrap Js -->
+<script src="~/js/bootstrap.min.js"></script>
+<!-- Animate on scroll Js -->
+<script src="~/js/aos.js"></script>
+<!-- Custom Js -->
+<script src="~/js/custom.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

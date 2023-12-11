@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model SessaoViewModel
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<!-- Meta Options -->
@@ -21,110 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="~/css/responsive.css">
 </head>
 <body>
-	<!-- Header One Start -->
-	<header class="header-one">
-		<div class="top-bar">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-9">
-						<ul class="login">
-							<li><a href="JavaScript:void(0)"><img src="~/images/bell.svg" alt="Bell">Apresentar O Evangelho De Jesus Cristo De Forma A Alcançar Novos Discípulos</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-2 offset-1">
-						<ul class="social-medias">
-							<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
-							<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="desktop-nav"  id="stickyHeader">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<nav>
-							<div class="logo">
-								<a href="index.html">
-									<img src="~/images/LogoIPB185x70.png" alt="Logo">
-								</a>
-							</div>
-							<div class="nav-bar">
-								<ul>
-								<li class="menu-item-has-children">
-								<a href="JavaScript:void(0)">Home</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
-								</ul>
-								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
-								</ul>
-								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
-								</ul>
-								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
-								</ul>
-								</li>
-								<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
-							</ul>
-							</div>
-							<div class="donation">
-								<a asp-controller="Home" asp-action="Perfil"><svg version="1.1" id="profile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19.738 19.738" style="enable-background:new 0 0 ;" xml:space="preserve"> <g> <path d="M18.18,19.738h-2c0-3.374-2.83-6.118-6.311-6.118s-6.31,2.745-6.31,6.118h-2 c0-4.478,3.729-8.118,8.311-8.118C14.451,11.62,18.18,15.26,18.18,19.738z" /> <path d="M9.87,10.97c-3.023,0-5.484-2.462-5.484-5.485C4.385,2.461,6.846,0,9.87,0 c3.025,0,5.486,2.46,5.486,5.485S12.895,10.97,9.87,10.97z M9.87,2C7.948,2,6.385,3.563,6.385,5.485S7.948,8.97,9.87,8.97 c1.923,0,3.486-1.563,3.486-3.485S11.791,2,9.87,2z" /> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></a>
-							</div>
-							<div id="nav-icon4">
-							  <span></span>
-							  <span></span>
-							  <span></span>
-							</div>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="mobile-nav" id="mobile-nav">
-			<div class="res-log">
-				<a href="index.html">
-					<img src="~/images/LogoIPB185x70.png" alt="Responsive Logo">
-				</a>
-			</div>
-			<ul>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Home</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
-								</ul>	
-								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Biblia</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
-								</ul>
-								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Sermão</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
-								</ul>
-								</li>
-								<li class="menu-item-has-children"><a href="JavaScript:void(0)">Blog</a>
-								<ul class="sub-menu">
-								<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
-								</ul>
-								</li>
-								<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
-			</ul>
-			<div class="res-rights flex-all">
-				<p>2023 - Presbiteriana</p>
-			</div>
-			<a href="JavaScript:void(0)" id="res-cross"></a>
-		</div>
-	</header>
-	<!-- Header One Start -->
+
 	<!-- Banner Start -->
 	<section class="banner position-relative">
 		<div class="parallax" style="background-image: url(https://iili.io/JTMj6TQ.jpg);"></div>
@@ -198,7 +96,7 @@
 				<div class="col-lg-7 col-md-12 col-sm-12">
 					<form>
 						<input type="text" name="Text" placeholder="Insira o seu endereço de email...">
-						<button>Se inscrever</button>
+						<a href="RedirectExibirPerfil?owner=@Model.Owner"> Se inscrever</a>
 					</form>
 				</div>
 			</div>

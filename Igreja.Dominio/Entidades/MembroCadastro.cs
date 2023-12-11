@@ -8,6 +8,7 @@ namespace Igreja.Dominio.Entidades
 {
     public class MembroCadastro
     {
+        public Guid Owner {  get; set; }
         public int Id { get; set; }
 
         public string Nome { get; set; }

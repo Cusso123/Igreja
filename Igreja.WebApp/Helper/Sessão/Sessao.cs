@@ -1,4 +1,5 @@
 ﻿using Igreja.Dominio.Entidades;
+using Igreja.WebApp.Models;
 using Newtonsoft.Json;
 
 namespace Igreja.WebApp.Helper.Sessão
@@ -13,15 +14,15 @@ namespace Igreja.WebApp.Helper.Sessão
 
         public MembroCadastro BuscarSessaoMembro()
         {
-            string sessaoMembro = _contextAccessor.HttpContext.Session.GetString("sessaoMembroLogado");
-            if (string.IsNullOrEmpty(sessaoMembro)) return null;
+            string MembroViewModel = _contextAccessor.HttpContext.Session.GetString("sessaoMembroLogado");
+            if (string.IsNullOrEmpty(MembroViewModel)) return null;
 
-            return JsonConvert.DeserializeObject<MembroCadastro>(sessaoMembro);
+            return JsonConvert.DeserializeObject<MembroCadastro>(MembroViewModel);
         }
 
-        public void CriarSessaoMembro(MembroCadastro membro)
+        public void CriarSessaoMembro(MembroCadastro MembroViewModel)
         {
-            string valor = JsonConvert.SerializeObject(membro);
+            string valor = JsonConvert.SerializeObject(MembroViewModel);
             _contextAccessor.HttpContext.Session.SetString("sessaoMembroLogado", valor);
         }
 

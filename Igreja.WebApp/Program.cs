@@ -7,25 +7,18 @@ using Igreja.Dados.EntityFramework;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Igreja.WebApp.Helper.Sessão;
+using System.Net.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-
-
 builder.Services.AddDbContext<Contexto>();
-
-
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<ISessao, Sessao>();
-
 builder.Services.AddScoped<IMembroCadastroRepository, MembroCadastroRepository>();
 builder.Services.AddScoped<IMembroCadastroService, MembroCadastroService>();
 //builder.Services.AddScoped<ILoginRepository, LoginService>();
-
-
 
 builder.Services.AddSession(o =>
 {
@@ -35,13 +28,11 @@ builder.Services.AddSession(o =>
 
 
 
-builder.Services.AddControllers();
+
 
 var app = builder.Build();
 
-
 // Configure the HTTP request pipeline.
-
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -51,13 +42,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Login}/{action=Index}/{id?}");
-
 app.Run();

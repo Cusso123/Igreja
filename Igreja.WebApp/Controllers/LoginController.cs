@@ -9,10 +9,10 @@ namespace Igreja.WebApp.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly IMembroCadastroRepository _service;
+        private readonly IMembroCadastroService _service;
         private readonly ISessao _sessao;
 
-        public LoginController(IMembroCadastroRepository MembroCadastroService, ISessao sessao)
+        public LoginController(IMembroCadastroService MembroCadastroService, ISessao sessao)
         {
             _service = MembroCadastroService;
             _sessao = sessao;
@@ -20,12 +20,15 @@ namespace Igreja.WebApp.Controllers
         }
         public IActionResult Index()
         {
+            //Se usuario estiver logado, redirecionar para a home
+            if (_sessao.BuscarSessaoMembro() != null) return RedirectToAction("Inicio", "Home");
             
             return View();
         }
         public IActionResult SairMembro()
         {
-            
+            _sessao.RemoverSessaoMembro();
+
 
             return RedirectToAction("Index", "Login");
         }
@@ -43,17 +46,22 @@ namespace Igreja.WebApp.Controllers
                     {
                         if (membro.SenhaValida(login.Senha))
                         {
-                            
+                           //var Sessao =  new SessaoViewModel { Owner = membro.Owner };
+                           _sessao.CriarSessaoMembro(membro);
                             return RedirectToAction("Inicio", "Home");
                         }
                         TempData["MensagemErro"] = $"Senha inválida, tente novamente";
                     }
-                    TempData["MensagemErro"] = $"Email/ou senha inválidos,Por favor, tente novamente";
+                    //login.Email = "";
+                    //login.Senha = "";
                 }
                 return View("Index", login);
             }
             catch (Exception erro)
             {
+                login.Owner= new Guid();
+                login.Email = "";
+                login.Senha = "";
                 TempData["MensagemErro"] = $"Ops, não conseguimos realizar o seu login, tente novamente. Erro: {erro.Message}";
                 return RedirectToAction("Index", login);
             }

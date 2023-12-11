@@ -13,7 +13,10 @@ namespace Igreja.Dominio.Interfaces
         public void  Adicionar(MembroCadastro membro_cadastro);
         public int EncontrarProximoIDDisponivel();
         public void Atualizar(MembroCadastro membro_cadastro);
-       
+
+        public MembroCadastro BuscarPorGuid(Guid owner);
+
+
         public void ApagarMembro(int id);
         public MembroCadastro BuscarPorEmail(string email);
         public IEnumerable<MembroCadastro> GetAll();

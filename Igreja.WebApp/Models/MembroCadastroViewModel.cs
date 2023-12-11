@@ -5,6 +5,7 @@ namespace Igreja.WebApp.Models
 {
     public class MembroCadastroViewModel
     {
+        public Guid Owner {  get; set; }
         public int Id { get; set; }
         [Required(ErrorMessage ="Digite o nome ")]
         public string Nome { get; set; }

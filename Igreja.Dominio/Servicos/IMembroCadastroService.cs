@@ -14,7 +14,10 @@ namespace Igreja.Dominio.Servicos
         public MembroCadastro BuscarPorEmail(string email);
         
         public void Atualizar(MembroCadastro membro_cadastro);
-        
+        public MembroCadastro BuscarPorGuid(Guid owner);
+
+
+
         public void ApagarMembro(int id);
         public IEnumerable<MembroCadastro> GetAll();
         public MembroCadastro  BuscarPorId(int id);

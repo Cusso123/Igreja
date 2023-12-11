@@ -48,5 +48,10 @@ namespace Igreja.Servico.Servicos
             return _contexto.BuscarPorId(id);
 
         }
+
+        public MembroCadastro BuscarPorGuid(Guid owner)
+        {
+            return _contexto.BuscarPorGuid(owner);
+        }
     }
 }

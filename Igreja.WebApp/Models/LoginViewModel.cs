@@ -5,6 +5,7 @@ namespace Igreja.WebApp.Models
 {
     public class LoginViewModel
     {
+        public Guid Owner { get; set; }
            
         public string Email { get; set; }
 

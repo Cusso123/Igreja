@@ -7,6 +7,7 @@ using Igreja.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using NuGet.Protocol.Plugins;
 using System.ComponentModel.DataAnnotations;
 
 namespace Igreja.WebApp.Controllers
@@ -32,6 +33,28 @@ namespace Igreja.WebApp.Controllers
 
         // Att Membro
 
+        public IActionResult ExibirPerfil(Guid owner)
+        {
+            
+           var result =  _membroCadastroService.BuscarPorGuid(owner);
+            if(result != null)
+            {
+                MembroCadastroViewModel membroCadastroViewModel = new MembroCadastroViewModel()
+                {
+                    Id = result.Id,
+                    Owner = result.Owner,
+                    Login = result.Login,
+                    Senha = result.Senha,
+                    Email = result.Email
+                };
+
+                return View(membroCadastroViewModel);
+            }
+            return View("Index");
+        }
+
+
+
         [HttpGet]
         public IActionResult AtualizarMembro(MembroCadastroViewModel membro_view)
         {
@@ -41,6 +64,7 @@ namespace Igreja.WebApp.Controllers
                 {
                     MembroCadastro membro = new()
                     {
+                        Owner = membro_view.Owner,
                         Id = membro_view.Id,
                         Nome = membro_view.Nome,
                         Email = membro_view.Email,
@@ -112,6 +136,7 @@ namespace Igreja.WebApp.Controllers
                 {
                     MembroCadastro membro = new()
                     {
+                        Owner = Guid.NewGuid(),
                         Nome = membroView.Nome,
                         Login = membroView.Login,
                         Email = membroView.Email,

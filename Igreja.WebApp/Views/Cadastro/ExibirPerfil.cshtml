@@ -1,0 +1,87 @@
+﻿@model Igreja.WebApp.Models.MembroCadastroViewModel
+
+@Html.EditorForModel(true)
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="~/css/style1.css">
+
+    <title>Login Dark/Light Mode</title>
+</head>
+
+<form asp-action="Atualizar" asp-controller="Cadastro" method="post" id="login_form">
+    <!-- FORM HEADER -->
+    <div id="form_header">
+        <h1>Login</h1>
+        <i id="mode_icon" class="fa-solid fa-moon"></i>
+    </div>
+    <!-- INPUTS -->
+    <div id="inputs">
+        <!-- NAME -->
+        <div class="input-box">
+            <!-- EMAIL -->
+            @Html.HiddenFor(x => x.Owner)
+            @Html.HiddenFor(x => x.Id)
+
+            <div class="input-box">
+                <label for="email">
+                    E-mail
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input @Model.Email type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="Email">
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+                </label>
+            </div>
+            <div class="input-box">
+                <label for="Nome">
+                    Nome
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input valor="@Model.Nome" type="text" asp-for="Nome" class="form-control" placeholder="Digite seu Nome" aria-label="Digite seu Nome" aria-describedby="basic-addon1" id="nome" name="Nome">
+                        
+                    </div>
+                </label>
+            </div>
+            <div class="input-box">
+                <label for="Login">
+                    Login
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input valor="@Model.Login" type="text" asp-for="Login" class="form-control" placeholder="Digite seu Login" aria-label="Digite seu login" aria-describedby="basic-addon1" id="login" name="Login">
+                        
+                    </div>
+                </label>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="input-box">
+                <label for="senha">
+                    Senha
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input valor="@Model.Senha" type="password" asp-for="Senha" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="Senha">
+                        
+                    </div>
+                </label>
+                <!-- FORGOT PASSWORD -->          
+            </div>
+        </div>
+    </div>
+    <!-- Cadastrar BUTTON -->
+    <button type="submit" id="login_button">
+
+       salvar
+
+    </button>
+
+</form>
+
+
+<script type="text/javascript" src="~/js/site.js"></script>
+
+<script>document.querySelectorAll('input.form-control').forEach(e => { e.value = e.getAttribute('valor'); e.defaultValue = e.getAttribute('valor'); console.log(e)})</script>

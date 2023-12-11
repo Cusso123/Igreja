@@ -1,4 +1,5 @@
 ﻿using Igreja.Dominio.Entidades;
+using Igreja.WebApp.Models;
 
 namespace Igreja.WebApp.Helper.Sessão
 {

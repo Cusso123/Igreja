@@ -41,6 +41,11 @@ namespace Igreja.Dados.EntityFramework.Configuration
                 .Property(m => m.Senha)
                 .HasColumnName("Senha")
                 .HasColumnType("varchar(200)");
+
+            builder
+                .Property(m => m.Owner)
+                .HasColumnName("Owner")
+                .HasColumnType("char(36)");
         }
 
     }
