@@ -94,7 +94,8 @@ ul.meta,
     .pd-content ul.pd-tabs li a:before,
     .payment-method .form-check-input:checked,
     .personal-info .dp-agree input:checked,
-    .prog-bar .progress .progress-bar {
+    .prog-bar .progress .progress-bar,
+    .card-header {
         background-color: #03BC98;
     }
 
@@ -110,7 +111,8 @@ ul.meta,
 .video-box:before,
 .header-two .desktop-nav nav:before,
 .header-two .desktop-nav nav:after,
-.green-bg {
+.green-bg,
+.card-header {
     background-color: #03BC98;
 }
 
@@ -139,7 +141,8 @@ ul.meta,
 .personal-info input:focus,
 .personal-info select:focus,
 .total-donation-amount .total_amount input,
-.personal-info .dp-agree input:checked {
+.personal-info .dp-agree input:checked,
+.card-header {
     border-color: #03BC98;
 }
 
@@ -148,6 +151,7 @@ ul.meta,
     .pastor-meta ul li svg,
     .event-meta > ul > li > svg,
     .pd-cart-heart .heart:hover svg,
-    .preloader svg, .about-three .counter-three .box svg {
+    .preloader svg, .about-three .counter-three .box svg,
+    .card-header {
         fill: #03BC98;
     }
