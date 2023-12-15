@@ -1,87 +1,146 @@
 ﻿@model Igreja.WebApp.Models.MembroCadastroViewModel
-
 @Html.EditorForModel(true)
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="~/css/style1.css">
-
-    <title>Login Dark/Light Mode</title>
+	<!-- Meta Options -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Title -->
+	<title>Perfil</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
+	<!-- Animate on scroll -->
+	<link rel="stylesheet" type="text/css" href="~/css/aos.css">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="~/css/style.css">
+	<!-- Colors -->
+	<link rel="stylesheet" type="text/css" href="~/css/color.css">
+	<!-- Responsive -->
+	<link rel="stylesheet" type="text/css" href="~/css/responsive.css">
 </head>
+<body>
+	<!-- Banner Start -->
+	<section class="banner position-relative">
+		<div class="parallax" style="background-image: url(https://iili.io/JTMj6TQ.jpg);"></div>
+		<div class="banner-data text-center">
+			<h2 class="text-white font-bold">Perfil</h2>
+			<img src="~/images/SimboloPresbiteriana50x65.png" alt="Banner Logo">
+		</div>
+	</section>
+	<!-- Banner End -->
+    <!-- Perfil Start -->
+	<section>
+		<form  method="post" id="login_form">
+			<!-- FORM HEADER -->
+			<div id="form_header">
+				<h1>Login</h1>
+				<i id="mode_icon" class="fa-solid fa-moon"></i>
+			</div>
+			<!-- INPUTS -->
+			<div id="inputs">
+				<!-- NAME -->
+				<div class="input-box">
+					<!-- EMAIL -->
+					@Html.HiddenFor(x => x.Owner)
+					@Html.HiddenFor(x => x.Id)
+					<div class="input-box">
+						<label for="email">
+							E-mail
+							<div class="input-field">
+								<i class="fa-solid fa-envelope"></i>
+								<input @Model.Email type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="Email">
+								@Html.ValidationMessageFor(x => x.Email)
+							</div>
+						</label>
+					</div>
+					<div class="input-box">
+						<label for="Nome">
+							Nome
+							<div class="input-field">
+								<i class="fa-solid fa-envelope"></i>
+								<input valor="@Model.Nome" type="text" asp-for="Nome" class="form-control" placeholder="Digite seu Nome" aria-label="Digite seu Nome" aria-describedby="basic-addon1" id="nome" name="Nome">
+							</div>
+						</label>
+					</div>
+					<div class="input-box">
+						<label for="Login">
+							Login
+							<div class="input-field">
+								<i class="fa-solid fa-envelope"></i>
+								<input valor="@Model.Login" type="text" asp-for="Login" class="form-control" placeholder="Digite seu Login" aria-label="Digite seu login" aria-describedby="basic-addon1" id="login" name="Login">
+							</div>
+						</label>
+					</div>
+					<!-- PASSWORD -->
+					<div class="input-box">
+						<label for="senha">
+							Senha
+							<div class="input-field">
+								<i class="fa-solid fa-key"></i>
+								<input valor="@Model.Senha" type="password" asp-for="Senha" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="Senha">
+							</div>
+						</label>
+						<!-- FORGOT PASSWORD -->
+					</div>
+				</div>
+			</div>
+			<!-- Cadastrar BUTTON -->
+			<button type="submit" id="login_button">
+				Salvar
+			</button>
+		</form>
+	</section>
+	<!-- Perfil End -->
+	<!-- Subscribe Start -->
+	<section class="subscribe">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-5 col-md-12 col-sm-12">
+					<h3 class="text-white">Vamos manter contato!</h3>
+					<p class="text-white">Inscreva-se para ficar por dentro das últimas notícias e atualizações interessantes.</p>
+				</div>
+				<div class="col-lg-7 col-md-12 col-sm-12">
+					<form>
+						<input type="text" name="Text" placeholder="Insira o seu endereço de email...">
+						<button>Se inscrever</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Subscribe End -->
+	<!-- Footer One Start -->
+	<footer class="gap footer-one no-bottom green-overlay">
+		<div class="parallax" style="background-image: url(https://scontent.faax1-1.fna.fbcdn.net/v/t1.6435-9/83929517_102524924645681_4953547127218241536_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeGKRwB4t_U1oCXPpVDTtlpXO8_rgRssBj87z-uBGywGP-CGiUmL0CFVu-7QaMYF-zU&_nc_ohc=2_5vRhHggzoAX9Gp-Ca&_nc_oc=AQn8_lf4VrSN5JJpXnTbXG9ezUZUMqRch3pF0Xf-2b2KcgwG2T_o-SLYyHGgIEX7G6s&_nc_ht=scontent.faax1-1.fna&oh=00_AfAztEtUwLoTzxWma0PfQgRW0HbON-mNaUO4aWtsG-21cg&oe=65950E33);"></div>
+		<div class="container">
+			<div class="copy-right">
+				<div class="social">
+					<ul class="social-medias">
+						<li><a href="https://www.facebook.com/ipbaraxa"><img src="~/images/facebook.svg" alt="facebook"></a></li>
+						<li><a href="https://www.instagram.com/ipbaraxa"><img src="~/images/instagram.svg" alt="instagram"></a></li>
+					</ul>
+				</div>
+				<div class="footer-rights">
+					<p class="text-white">© Copyright <span>2023 - Presbiteriana.</span> Todos os direitos reservados.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer One End -->
+	<!-- Scroll to top -->
+	<button id="scrollTop" class="scrollTopStick"><svg viewBox="0 0 490.523 490.523" fill="#fff" height="15"> <path style="fill:#000;" d="M487.411,355.047L252.744,120.38c-4.165-4.164-10.917-4.164-15.083,0L2.994,355.047 c-4.093,4.237-3.976,10.99,0.262,15.083c4.134,3.993,10.687,3.993,14.821,0l227.115-227.115l227.115,227.136 c4.237,4.093,10.99,3.976,15.083-0.261c3.993-4.134,3.993-10.688,0-14.821L487.411,355.047z"></path> <path d="M479.859,373.266c-2.831,0.005-5.548-1.115-7.552-3.115L245.192,143.015L18.077,370.151 c-4.237,4.093-10.99,3.976-15.083-0.262c-3.993-4.134-3.993-10.687,0-14.821l234.667-234.667c4.165-4.164,10.917-4.164,15.083,0 l234.667,234.667c4.159,4.172,4.148,10.926-0.024,15.085C485.388,372.146,482.681,373.265,479.859,373.266z"></path> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></button>
+	<!-- Jquery -->
+	<script src="~/js/jquery.min.js"></script>
+	<!-- Bootstrap Js -->
+	<script src="~/js/bootstrap.min.js"></script>
+	<!-- Animate on scroll Js -->
+	<script src="~/js/aos.js"></script>
+	<!-- Custom Js -->
+	<script src="~/js/custom.js"></script>
+	<script>document.querySelectorAll('input.form-control').forEach(e => { e.value = e.getAttribute('valor'); e.defaultValue = e.getAttribute('valor'); console.log(e) })</script>
 
-<form asp-action="Atualizar" asp-controller="Cadastro" method="post" id="login_form">
-    <!-- FORM HEADER -->
-    <div id="form_header">
-        <h1>Login</h1>
-        <i id="mode_icon" class="fa-solid fa-moon"></i>
-    </div>
-    <!-- INPUTS -->
-    <div id="inputs">
-        <!-- NAME -->
-        <div class="input-box">
-            <!-- EMAIL -->
-            @Html.HiddenFor(x => x.Owner)
-            @Html.HiddenFor(x => x.Id)
-
-            <div class="input-box">
-                <label for="email">
-                    E-mail
-                    <div class="input-field">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input @Model.Email type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="Email">
-                        @Html.ValidationMessageFor(x => x.Email)
-                    </div>
-                </label>
-            </div>
-            <div class="input-box">
-                <label for="Nome">
-                    Nome
-                    <div class="input-field">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input valor="@Model.Nome" type="text" asp-for="Nome" class="form-control" placeholder="Digite seu Nome" aria-label="Digite seu Nome" aria-describedby="basic-addon1" id="nome" name="Nome">
-                        
-                    </div>
-                </label>
-            </div>
-            <div class="input-box">
-                <label for="Login">
-                    Login
-                    <div class="input-field">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input valor="@Model.Login" type="text" asp-for="Login" class="form-control" placeholder="Digite seu Login" aria-label="Digite seu login" aria-describedby="basic-addon1" id="login" name="Login">
-                        
-                    </div>
-                </label>
-            </div>
-
-            <!-- PASSWORD -->
-            <div class="input-box">
-                <label for="senha">
-                    Senha
-                    <div class="input-field">
-                        <i class="fa-solid fa-key"></i>
-                        <input valor="@Model.Senha" type="password" asp-for="Senha" class="form-control" placeholder="Digite a senha" aria-label="Digite a senha" aria-describedby="basic-addon1" id="senha" name="Senha">
-                        
-                    </div>
-                </label>
-                <!-- FORGOT PASSWORD -->          
-            </div>
-        </div>
-    </div>
-    <!-- Cadastrar BUTTON -->
-    <button type="submit" id="login_button">
-
-       salvar
-
-    </button>
-
-</form>
-
-
-<script type="text/javascript" src="~/js/site.js"></script>
-
-<script>document.querySelectorAll('input.form-control').forEach(e => { e.value = e.getAttribute('valor'); e.defaultValue = e.getAttribute('valor'); console.log(e)})</script>
+</body>
+</html>

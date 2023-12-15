@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Filters\**" />
     <Compile Remove="Views\Paginas\**" />
     <Compile Remove="wwwroot\css\Imagem\**" />
+    <Content Remove="Filters\**" />
     <Content Remove="Views\Paginas\**" />
     <Content Remove="wwwroot\css\Imagem\**" />
+    <EmbeddedResource Remove="Filters\**" />
     <EmbeddedResource Remove="Views\Paginas\**" />
     <EmbeddedResource Remove="wwwroot\css\Imagem\**" />
+    <None Remove="Filters\**" />
     <None Remove="Views\Paginas\**" />
     <None Remove="wwwroot\css\Imagem\**" />
   </ItemGroup>
@@ -34,7 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Filters\" />
     <Folder Include="wwwroot\music\" />
     <Folder Include="wwwroot\videos\" />
   </ItemGroup>
