@@ -18,6 +18,67 @@
 	<!-- Responsive -->
 	<link rel="stylesheet" type="text/css" href="~/css/responsive.css">
 </head>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+	}
+
+	#bibliaForm {
+		text-align: center;
+		background-color: #000000;
+		padding: 20px;
+		color: #03BC98;
+	}
+
+	#livro, #capitulo, button {
+		background-color: #000000;
+		color: #03BC98;
+		border: 1px solid #03BC98;
+		padding: 10px;
+		width: 200px; 
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
+
+	#resultado {
+		margin-top: 20px;
+		text-align: center;
+		background-color: #000000;
+		color: #03BC98;
+		padding: 20px;
+		font-size: 18px;
+	}
+
+		#resultado label {
+			font-weight: bold;
+			margin-right: 10px;
+		}
+
+		#resultado span {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: normal;
+		}
+
+	#spTextos span {
+		display: block;
+		margin-bottom: 10px;
+		font-weight: normal;
+		font-size: 16px;
+	}
+
+	#spTextos span {
+		font-weight: normal;
+	}
+
+	label, #spTextos span {
+		color: #03BC98;
+	}
+
+	button {
+		cursor: pointer;
+	}
+</style>
 <body>
 	<!-- Banner Start -->
 	<section class="banner position-relative">
@@ -29,6 +90,95 @@
 	</section>
 	<!-- Banner End -->
 	<!-- API Biblia Start -->
+	<form id="bibliaForm">
+		<label for="livro">Livro:</label>
+		<select id="livro" name="livro">
+			<!-- Adicione as opções para os livros aqui -->
+			<option value="gn">Gênesis</option>
+			<option value="ex">Êxodo</option>
+			<option value="lv">Levítico</option>
+			<option value="nm">Números</option>
+			<option value="dt">Deuteronômio</option>
+			<option value="js">Josué</option>
+			<option value="jz">Juízes</option>
+			<option value="rt">Rute</option>
+			<option value="1sm">1 Samuel</option>
+			<option value="2sm">2 Samuel</option>
+			<option value="1rs">1 Reis</option>
+			<option value="2rs">2 Reis</option>
+			<option value="1cr">1 Crônicas</option>
+			<option value="2cr">2 Crônicas</option>
+			<option value="ed">Esdras</option>
+			<option value="ne">Neemias</option>
+			<option value="et">Ester</option>
+			<option value="job">Jó</option>
+			<option value="sl">Salmos</option>
+			<option value="pv">Provérbios</option>
+			<option value="ec">Eclesiastes</option>
+			<option value="ct">Cânticos</option>
+			<option value="is">Isaías</option>
+			<option value="jr">Jeremias</option>
+			<option value="lm">Lamentações de Jeremias</option>
+			<option value="ez">Ezequiel</option>
+			<option value="dn">Daniel</option>
+			<option value="os">Oséias</option>
+			<option value="jl">Joel</option>
+			<option value="am">Amós</option>
+			<option value="ob">Obadias</option>
+			<option value="jn">Jonas</option>
+			<option value="mq">Miquéias</option>
+			<option value="na">Naum</option>
+			<option value="hc">Habacuque</option>
+			<option value="sf">Sofonias</option>
+			<option value="ag">Ageu</option>
+			<option value="zc">Zacarias</option>
+			<option value="ml">Malaquias</option>
+			<option value="mt">Mateus</option>
+			<option value="mc">Marcos</option>
+			<option value="lc">Lucas</option>
+			<option value="jo">João</option>
+			<option value="at">Atos</option>
+			<option value="rm">Romanos</option>
+			<option value="1co">1 Coríntios</option>
+			<option value="2co">2 Coríntios</option>
+			<option value="gl">Gálatas</option>
+			<option value="ef">Efésios</option>
+			<option value="fp">Filipenses</option>
+			<option value="cl">Colossenses</option>
+			<option value="1ts">1 Tessalonicenses</option>
+			<option value="2ts">2 Tessalonicenses</option>
+			<option value="1tm">1 Timóteo</option>
+			<option value="2tm">2 Timóteo</option>
+			<option value="tt">Tito</option>
+			<option value="fm">Filemom</option>
+			<option value="hb">Hebreus</option>
+			<option value="tg">Tiago</option>
+			<option value="1pe">1 Pedro</option>
+			<option value="2pe">2 Pedro</option>
+			<option value="1jo">1 João</option>
+			<option value="2jo">2 João</option>
+			<option value="3jo">3 João</option>
+			<option value="jd">Judas</option>
+			<option value="ap">Apocalipse</option>
+			<!--pegar todas as opções em https://www.abibliadigital.com.br/api/books-->
+		</select>
+		<label for="capitulo">Capítulo:</label>
+		<input type="number" id="capitulo" name="capitulo" />
+		<button type="button" onclick="consultarCapitulo()">Consultar Capitulo</button>
+	</form>
+
+	<div id="resultado">
+		<!-- O resultado será exibido aqui -->
+		<label>Autor: </label><span id="spAutor"></span>
+		<br>
+		<label>Nome: </label><span id="spNome"></span>
+		<br>
+		<label>Grupo: </label><span id="spGrupo"></span>
+		<br>
+		<label>Quantidade De Capitulos: </label><span id="spCapitulo"></span>
+		<br>
+		<label>Textos: </label><span id="spTextos"></span>
+	</div>
 	<!-- API Biblia End -->
 	<!-- Subscribe Start -->
 	<section class="subscribe">
@@ -76,5 +226,34 @@
 	<script src="~/js/aos.js"></script>
 	<!-- Custom Js -->
 	<script src="~/js/custom.js"></script>
+
+<script>
+	function consultarCapitulo() {
+		let livro = $('#livro').val();
+		let capitulo = $('#capitulo').val();
+
+		console.log(`https://www.abibliadigital.com.br/api/verses/nvi/${livro}/${capitulo}`);
+
+		$.ajax({
+			url: `https://www.abibliadigital.com.br/api/verses/nvi/${livro}/${capitulo}`,
+			type: 'GET',
+			contentType: 'application/json',
+			success: function (data) {
+				console.log(data);
+
+				$('#spAutor').html(data.book.author);
+				$('#spNome').html(data.book.name);
+				$('#spGrupo').html(data.book.group);
+				$('#spCapitulo').html(data.chapter.verses);
+				let versiculosHTML = data.verses.map(v => `<strong>${v.number}</strong>: ${v.text}`).join('<br>');
+				$('#spTextos').html(versiculosHTML);
+			},
+			error: function (error) {
+			console.log(error);
+			alert('Erro ao consultar o capítulo da Bíblia.');
+			}
+		});
+	}
+</script>
 </body>
 </html>
