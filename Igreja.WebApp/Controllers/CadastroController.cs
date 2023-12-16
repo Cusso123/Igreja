@@ -22,6 +22,11 @@ namespace Igreja.WebApp.Controllers
             _membroCadastroService = membroCadastroService;
         }
         // Pegar todos
+        public IActionResult Valores()
+        {
+            var result = _membroCadastroService.GetAll();
+            return View(result);
+        }
         public IActionResult Index()
         {
             ViewBag.Perfil = db.Perfil.ToList();
