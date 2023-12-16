@@ -3,6 +3,7 @@ using Igreja.Dominio.Entidades;
 using Igreja.Dominio.Interfaces;
 using Igreja.Dominio.Servicos;
 using Igreja.Servico.Servicos;
+using Igreja.WebApp.Helper.Sessão;
 using Igreja.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -12,6 +13,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Igreja.WebApp.Controllers
 {
+    
     public class CadastroController : Controller
     {
         private readonly IMembroCadastroService _membroCadastroService;
@@ -22,54 +24,83 @@ namespace Igreja.WebApp.Controllers
             _membroCadastroService = membroCadastroService;
         }
         // Pegar todos
+        public IActionResult Valores()
+        {
+            var result = _membroCadastroService.GetAll();
+            return View(result);
+        }
+        public IActionResult ApagarMembro()
+        {
+            var result = _membroCadastroService.GetAll();
+            return View(result);
+        }
+        public IActionResult Atualizar()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             ViewBag.Perfil = db.Perfil.ToList();
             return View(new MembroCadastroViewModel());
         }
 
-        public IActionResult Atualizar() { return View(); }
-        // Att Membro
-        public IActionResult ExibirPerfil(Guid owner)
-        {
-           var result =  _membroCadastroService.BuscarPorGuid(owner);
-            if(result != null)
-            {
-                MembroCadastroViewModel membroCadastroViewModel = new MembroCadastroViewModel()
-                {
-                    Id = result.Id,
-                    Owner = result.Owner,
-                    Login = result.Login,
-                    PerfilID = result.PerfilID,
-                    Senha = result.Senha,
-                    Email = result.Email
-                };
 
-                return View(membroCadastroViewModel);
-            }
-            return View("Index");
-        }
         [HttpGet]
-        public IActionResult AtualizarMembro(MembroCadastroViewModel membro_view)
+        public IActionResult Editar(Guid Id)
+        {
+            if (Id == null)
+            {
+                throw new Exception("Não há dados dessa pessoa");
+            }
+
+            MembroCadastro membroEdit = _membroCadastroService.BuscarPorGuid (Id);
+
+            if (membroEdit == null)
+            {
+                return NotFound();
+            }
+
+            MembroCadastroViewModel membroEditadoModel = new MembroCadastroViewModel
+            {
+
+                Owner = membroEdit.Owner,
+                Id = membroEdit.Id,
+                Nome = membroEdit.Nome,
+                Email = membroEdit.Email,
+                Login = membroEdit.Login,
+                PerfilID = membroEdit.PerfilID,
+                Senha = membroEdit.Senha
+                
+            };
+
+            return View(membroEditadoModel);
+        }
+
+
+
+        // Att Membro
+        [HttpPost]
+        public IActionResult AtualizarMembro(MembroCadastroViewModel membroEdit)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     MembroCadastro membro = new()
-                    {
-                        Owner = membro_view.Owner,
-                        Id = membro_view.Id,
-                        Nome = membro_view.Nome,
-                        Email = membro_view.Email,
-                        Login = membro_view.Login,
-                        Senha = membro_view.Senha
+                    {   
+                        Id = membroEdit.Id,
+                       Owner = membroEdit.Owner,
+                        Nome = membroEdit.Nome,
+                        Email = membroEdit.Email,
+                        Login = membroEdit.Login,
+                        PerfilID = membroEdit.PerfilID,
+                        Senha = membroEdit.Senha
                     };
                     _membroCadastroService.Atualizar(membro);
                     TempData["MensagemSucesso"] = "Membro editado com sucesso";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Membros","Home");
                 }
-                return View("Atualizar", membro_view);
+                return View("Atualizar", membroEdit);
             }
             catch (System.Exception erro)
             {
@@ -78,13 +109,13 @@ namespace Igreja.WebApp.Controllers
             }
         }
         // Att Membro
-        public IActionResult ApagarMembro(int id)
+
+        public IActionResult ApagarMembro(Guid id)
         {
-            MembroCadastro apagar_membro = _membroCadastroService.BuscarPorId(id);
+            MembroCadastro apagar_membro = _membroCadastroService.BuscarPorGuid(id);
             return View(apagar_membro);
         }
-        // public IActionResult PegarTodos() { return _membroCadastroService.GetAll(); }
-        // Apagar Membro
+        
         public IActionResult Apagar(int id)
         {
             try

@@ -1,45 +1,123 @@
-﻿@model Igreja.WebApp.Models.LoginViewModel
+﻿﻿@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Home";
+}
+@using Igreja.WebApp.Models
+@model MembroCadastroViewModel
 
-<main id="container">
-    <form asp-action="AtualizarMembro" asp-controller="Cadastro" method="get" id="login_form">
-        <!-- FORM HEADER -->
-        <div id="form_header">
-            <h1>Editar</h1>
-            <i id="mode_icon" class="fa-solid fa-moon"></i>
-        </div>
-        <!-- INPUTS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="~/css/style1.css">
+
+    <title>Login Dark/Light Mode</title>
+    <style>
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .text-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .text-danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <main id="container">
+        <form asp-action="AtualizarMembro" asp-controller="Cadastro" method="post" id="login_form">
+
+            <input type="hidden" asp-for=Owner/>
+            <input type="hidden" asp-for="Senha">
+            <input type="hidden" asp-for="PerfilID">
+             <div class="alert-index">
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger rounded-pill btn-sm close-alert" aria-label="Close">x</button>
+                @TempData["MensagemSucesso"]
+            </div>
+        }
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger rounded-pill btn-sm close-alert" aria-label="Close">x</button>
+                @TempData["MensagemErro"]
+            </div>
+        }
+    </div>
+            <!-- FORM HEADER -->
+            <div id="form_header">
+                <h1>Cadastro</h1>
+                <i id="mode_icon" class="fa-solid fa-moon"></i>
+            </div>
+                <!-- NAME -->
+            <div class="input-box">
+                    <label for="nome">
+                            Nome
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" asp-for="Nome" class="form-control" placeholder="Digite seu nome" aria-label="Digite seu nome" aria-describedby="basic-addon1" id="nome" name="Nome">
+                            @Html.ValidationMessageFor(x => x.Nome)
+                        </div>
+                    </label>
+                        <label for="login">
+                            Login
+                            <div class="input-field">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="login" asp-for="Login" class="form-control" placeholder="Digite o login" aria-label="Digite o login" aria-describedby="basic-addon1" id="senha" name="Login">
+                                @Html.ValidationMessageFor(x => x.Login)
+                            </div>
+                        </label>
                 <!-- EMAIL -->
-                <div class="input-box">
                     <label for="email">
-                        Email
+                        E-mail
                         <div class="input-field">
                             <i class="fa-solid fa-envelope"></i>
-                           <dd>@Model.Email</dd>
-                            @Html.ValidationMessageFor(x => x.Email)
-                        </div>
+                            <input type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" aria-label="Digite seu email" aria-describedby="basic-addon1" id="email" name="Email">
+                                @Html.ValidationMessageFor(x => x.Email)
+                       </div>
                     </label>
-                </div>
-
-                <!-- PASSWORD -->
-                <div class="input-box">
-                    <label for="senha">
-                        Senha
-                        <div class="input-field">
-                            <i class="fa-solid fa-key"></i>
-                        <dd>@Model.Senha</dd>  
-                        @Html.ValidationMessageFor(x => x.Senha)
-                        </div>
-                    </label>
-
                    
-                </div>
-            </div>
-
+                    <!-- FORGOT PASSWORD -->
+                    <div id="forgot_password">
+                        <a asp-controller="Login" asp-action="Index">
+                            Ja possui cadastro?
+                        </a>
+                    </div>
+            </div class="input-box">
             <!-- Cadastrar BUTTON -->
-            <button type="submit" id="login_button">
-
-                Cadastrar
-
+            <button type="submit" id="login_button ">
+                    Editar
             </button>
-    </form>
-</main>
+             <button type="submit" id="login_button" asp-controller="Home" asp-action="Membros">
+                    Voltar
+            </button>
+        </form>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript" src="~/js/site.js"></script>
+  
+
+</body>
+</html>

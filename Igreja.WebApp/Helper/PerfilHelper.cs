@@ -6,8 +6,8 @@
 		{
 			return perfilId switch
 			{
-				1 => "1-Funcionário",
-				2 => "2-Padrão",
+				1 => "1-Pastor",
+				2 => "2-Membro",
 				_ => "Desconhecido"
 			};
 		}

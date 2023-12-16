@@ -17,6 +17,7 @@
 
     <title>Login Dark/Light Mode</title>
     <style>
+
         .input-box {
             margin-bottom: 20px;
         }
@@ -44,6 +45,22 @@
 <body>
     <main id="container">
         <form asp-action="CadastroMembro" asp-controller="Cadastro" method="post" id="login_form">
+             <div class="alert-index">
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger rounded-pill btn-sm close-alert" aria-label="Close">x</button>
+                @TempData["MensagemSucesso"]
+            </div>
+        }
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger rounded-pill btn-sm close-alert" aria-label="Close">x</button>
+                @TempData["MensagemErro"]
+            </div>
+        }
+    </div>
             <!-- FORM HEADER -->
             <div id="form_header">
                 <h1>Cadastro</h1>

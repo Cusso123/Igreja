@@ -1,18 +1,24 @@
-﻿using Igreja.Dominio.Servicos;
+﻿using Igreja.Dados;
+using Igreja.Dominio.Servicos;
+using Igreja.Servico.Servicos;
 using Igreja.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Igreja.WebApp.Controllers
 {
+    
+    
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IMembroCadastroService _membro;
-        public HomeController(ILogger<HomeController> logger, IMembroCadastroService membro)
+      
+		private readonly IMembroCadastroService _membroCadastroService;
+		private readonly Contexto db = new Contexto();
+
+		public HomeController(IMembroCadastroService membro)
         {
-            _logger = logger;
-            _membro = membro;
+           
+			_membroCadastroService = membro;
 
         }
         public IActionResult Index()
@@ -35,24 +41,24 @@ namespace Igreja.WebApp.Controllers
         {
             return View();
         }
-        public IActionResult Contato(SessaoViewModel sessao)
+		public IActionResult AtividadesPastor()
+		{
+			return View();
+		}
+		public IActionResult AtividadesMembro()
+		{
+			return View();
+		}
+		public IActionResult Membros()
+		{
+			var result = _membroCadastroService.GetAll();
+			return View(result);
+		
+		}
+		public IActionResult Contato(SessaoViewModel sessao)
         {
 
             return View(sessao);
-        }
-        public  IActionResult RedirectExibirPerfil(SessaoViewModel sessao)
-        {   
-            var carai = _membro.BuscarPorGuid(sessao.Owner);
-            MembroCadastroViewModel membroCadastroViewModel = new MembroCadastroViewModel()
-            {
-                Id = carai.Id,
-                Owner = carai.Owner,
-                Login = carai.Login,
-                Senha = carai.Senha,
-                Email = carai.Email
-            };
-            
-            return RedirectToAction("ExibirPerfil", "Cadastro", sessao.Owner);
         } 
         public IActionResult Privacy()
         {
