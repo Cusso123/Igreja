@@ -18,7 +18,6 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<ISessao, Sessao>();
 builder.Services.AddScoped<IMembroCadastroRepository, MembroCadastroRepository>();
 builder.Services.AddScoped<IMembroCadastroService, MembroCadastroService>();
-//builder.Services.AddScoped<ILoginRepository, LoginService>();
 
 builder.Services.AddSession(o =>
 {

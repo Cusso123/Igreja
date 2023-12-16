@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ValueObjects\**" />
-    <EmbeddedResource Remove="ValueObjects\**" />
-    <None Remove="ValueObjects\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Entidades\Perfil.cs" />
     <Compile Remove="Entidades\PerfilEnum.cs" />
   </ItemGroup>
 
@@ -22,6 +15,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
     <PackageReference Include="Sytem.WebPackage" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ValueObjects\" />
   </ItemGroup>
 
 </Project>

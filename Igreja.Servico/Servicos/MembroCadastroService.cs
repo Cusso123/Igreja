@@ -14,7 +14,10 @@ namespace Igreja.Servico.Servicos
     {
 
         IMembroCadastroRepository _contexto { get; set; }
-        public MembroCadastroService(IMembroCadastroRepository repository) { _contexto = repository; }
+        public MembroCadastroService(IMembroCadastroRepository repository)
+        { 
+            _contexto = repository; 
+        }
 
 
         public void Adicionar(MembroCadastro membro_cadastro)
@@ -35,7 +38,10 @@ namespace Igreja.Servico.Servicos
             _contexto.ApagarMembro(id);
         }
 
-        public IEnumerable<MembroCadastro> GetAll() { return _contexto.GetAll(); }
+        public IEnumerable<MembroCadastro> GetAll() 
+        { 
+            return _contexto.GetAll(); 
+        }
 
 
         public void Atualizar(MembroCadastro membro_cadastro)

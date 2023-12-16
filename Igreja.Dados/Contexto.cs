@@ -8,7 +8,11 @@ namespace Igreja.Dados
     public class Contexto : DbContext
     {
         public DbSet<MembroCadastro> Membro { get; set; }
+        public DbSet<Perfil> Perfil { get; set; }
 
+        public Contexto() : base()
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,6 +25,7 @@ namespace Igreja.Dados
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MembroCadastroConfiguration());
+            modelBuilder.ApplyConfiguration(new PerfilConfiguration());
         }
 
     }

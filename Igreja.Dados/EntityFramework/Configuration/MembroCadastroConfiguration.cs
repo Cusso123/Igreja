@@ -46,7 +46,10 @@ namespace Igreja.Dados.EntityFramework.Configuration
                 .Property(m => m.Owner)
                 .HasColumnName("Owner")
                 .HasColumnType("char(36)");
+            builder
+                .HasOne(e => e.Perfil)
+                .WithMany()
+                .HasForeignKey(e => e.PerfilID);
         }
-
     }
 }

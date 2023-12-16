@@ -6,11 +6,11 @@ namespace Igreja.WebApp.Models
     public class LoginViewModel
     {
         public Guid Owner { get; set; }
-           
-        public string Email { get; set; }
+		[Required(ErrorMessage = "Digite seu email")]
+		public string Email { get; set; }
 
-       
-        public string Senha { get; set; }
+		[Required(ErrorMessage = "Digite sua senha")]
+		public string Senha { get; set; }
 
         public void Autenticado()
         {

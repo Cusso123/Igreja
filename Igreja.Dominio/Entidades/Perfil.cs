@@ -8,8 +8,7 @@ namespace Igreja.Dominio.Entidades
 {
     public class Perfil
     {
-
-        public int PerfilID {  get; set; }
-        public string NomePerfil {  get; set; }
+        public int PerfilID { get; set; }
+        public string NomePerfil { get; set; }
     }
 }

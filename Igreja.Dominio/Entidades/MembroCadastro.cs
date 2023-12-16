@@ -10,14 +10,13 @@ namespace Igreja.Dominio.Entidades
     {
         public Guid Owner {  get; set; }
         public int Id { get; set; }
-
         public string Nome { get; set; }
-
         public string Login { get; set; }
-
+        public int PerfilID { get; set; }
         public string Email { get; set; }
-
         public string Senha { get; set; }
+        public virtual Perfil Perfil { get; set; }
+
 
         public bool SenhaValida(string senha) { return Senha == senha; }
 

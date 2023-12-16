@@ -11,6 +11,8 @@ namespace Igreja.WebApp.Models
         public string Nome { get; set; }
         [Required(ErrorMessage = "Digite o login ")]
         public string Login { get; set; }
+        [Required(ErrorMessage = "Digite seu perfil")]
+        public int PerfilID { get; set; }
         [Required(ErrorMessage = "Digite o email ")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Digite a senha")]

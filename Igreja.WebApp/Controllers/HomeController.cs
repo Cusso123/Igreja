@@ -9,10 +9,6 @@ namespace Igreja.WebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IMembroCadastroService _membro;
-
-
-
-
         public HomeController(ILogger<HomeController> logger, IMembroCadastroService membro)
         {
             _logger = logger;

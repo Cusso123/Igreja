@@ -46,14 +46,11 @@ namespace Igreja.WebApp.Controllers
                     {
                         if (membro.SenhaValida(login.Senha))
                         {
-                           //var Sessao =  new SessaoViewModel { Owner = membro.Owner };
                            _sessao.CriarSessaoMembro(membro);
                             return RedirectToAction("Inicio", "Home");
                         }
                         TempData["MensagemErro"] = $"Senha inválida, tente novamente";
                     }
-                    //login.Email = "";
-                    //login.Senha = "";
                 }
                 return View("Index", login);
             }
@@ -65,39 +62,6 @@ namespace Igreja.WebApp.Controllers
                 TempData["MensagemErro"] = $"Ops, não conseguimos realizar o seu login, tente novamente. Erro: {erro.Message}";
                 return RedirectToAction("Index", login);
             }
-
-
-
-            //    try
-            //    {
-
-            //        if (ModelState.IsValid)
-            //        {
-            //            //MembroCadastro membro = _service.BuscarPorLogin(login.Login);
-
-            //            //if (membro != null)
-            //            //{
-            //            //if(membro.SenhaValida(login.Senha)) 
-            //            //{
-            //            return RedirectToAction("Index", "Home");
-            //            //}
-
-            //            //TempData["MensagemErro"] = $"Senha do membro é invalida, tente novamente ";
-            //        }
-
-            //        //TempData["MensagemErro"] = $"Usuario/Senha invalido(s), tente novamente ";
-            //        //}
-
-            //        return View("Index", login);
-
-            //    }
-            //    catch (Exception erro)
-            //    {
-            //        TempData["MensagemErro"] = $"Ops, não conseguimos realizar o seu login, tente novamente.{erro.Message}";
-            //        return RedirectToAction("Index", "Autenticar");
-            //    }
-
-            //}
         }
 }
 }
