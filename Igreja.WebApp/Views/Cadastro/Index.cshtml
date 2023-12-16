@@ -85,7 +85,7 @@
                             @Html.ValidationMessageFor(x => x.Senha)
                         </div>
                     </label>
-                    <!-- Perfil -->
+                 <!-- Perfil -->
                     <div class="text-field">
                     <label class="control-label" for="Perfil">Perfil</label>
                     @Html.DropDownListFor(x => x.PerfilID, new SelectList(ViewBag.Perfil, "PerfilID", "NomePerfil", Model.PerfilID), "Selecione",new { @class = "form-select"})
