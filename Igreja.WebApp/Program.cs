@@ -14,10 +14,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Contexto>();
+
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 builder.Services.AddScoped<ISessao, Sessao>();
+
 builder.Services.AddScoped<IMembroCadastroRepository, MembroCadastroRepository>();
 builder.Services.AddScoped<IMembroCadastroService, MembroCadastroService>();
+
+builder.Services.AddScoped<IAtividadeRepository, AtividadesRepository>();
+builder.Services.AddScoped<IAtividadeService, AtividadeService>();
 
 builder.Services.AddSession(o =>
 {

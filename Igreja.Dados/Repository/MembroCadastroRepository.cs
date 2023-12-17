@@ -39,7 +39,7 @@ namespace Igreja.Dados.Repository
 
         public MembroCadastro BuscarPorId(int id)
         {
-            return Contexto.Membro.First(m => m.Id == id);
+            return Contexto.Membro.FirstOrDefault(m => m.Id == id);
         }
 
         public void ApagarMembro(int id)

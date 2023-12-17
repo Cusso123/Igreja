@@ -1,5 +1,5 @@
-﻿﻿@using Igreja.Dominio.Entidades;
-@model MembroCadastro
+﻿@using Igreja.Dominio.Entidades;
+@model Atividades
 
 <style>
     body {
@@ -56,13 +56,13 @@
 </style>
 
 <form>
-    <input type="hidden" asp-for=Id />
+    <input type="hidden" asp-for=AtividadeID />
 
     <div class="main-delete">
         <div class="card-delete">
-            <h1>Deseja realmente apagar (@Model.Nome)?</h1>
-            <button class="btn-delete btn btn-danger" asp-controller="Cadastro" asp-action="Apagar">Apagar</button>
-            <button class="btn-delete btn btn-primary" asp-controller="Home" asp-action="Membros">Voltar</button>
+            <h1>Deseja realmente apagar essa atividade ?</h1>
+            <button class="btn-delete btn btn-danger" asp-controller="Atividades" asp-action="ApagarAtividade">Apagar</button>
+            <button class="btn-delete btn btn-primary" asp-controller="Atividades" asp-action="Index">Voltar</button>
 
         </div>
     </div>

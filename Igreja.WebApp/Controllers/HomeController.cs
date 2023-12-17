@@ -14,11 +14,11 @@ namespace Igreja.WebApp.Controllers
       
 		private readonly IMembroCadastroService _membroCadastroService;
 		private readonly Contexto db = new Contexto();
-
-		public HomeController(IMembroCadastroService membro)
+		private readonly IAtividadeService _AtividadeService;
+		public HomeController(IMembroCadastroService membro, IAtividadeService atividade)
         {
-           
-			_membroCadastroService = membro;
+            _AtividadeService = atividade;  
+			 _membroCadastroService = membro;
 
         }
         public IActionResult Index()
@@ -47,6 +47,9 @@ namespace Igreja.WebApp.Controllers
 		}
 		public IActionResult AtividadesMembro()
 		{
+			var resultado = _AtividadeService.GetAll();
+			return View(resultado);
+
 			return View();
 		}
 		public IActionResult Membros()

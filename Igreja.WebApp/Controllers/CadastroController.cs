@@ -29,15 +29,10 @@ namespace Igreja.WebApp.Controllers
             var result = _membroCadastroService.GetAll();
             return View(result);
         }
-        public IActionResult ApagarMembro()
-        {
-            var result = _membroCadastroService.GetAll();
-            return View(result);
-        }
-        public IActionResult Atualizar()
-        {
-            return View();
-        }
+        //public IActionResult Atualizar()
+        //{
+        //    return View();
+        //}
         public IActionResult Index()
         {
             ViewBag.Perfil = db.Perfil.ToList();
@@ -45,35 +40,21 @@ namespace Igreja.WebApp.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult Editar(Guid Id)
+        
+        public IActionResult Atualizar(int Id)
         {
-            if (Id == null)
+            MembroCadastro membroEdit = _membroCadastroService.BuscarPorId(Id);
+            MembroCadastroViewModel membroEditadoModel = new MembroCadastroViewModel()
             {
-                throw new Exception("Não há dados dessa pessoa");
-            }
-
-            MembroCadastro membroEdit = _membroCadastroService.BuscarPorGuid (Id);
-
-            if (membroEdit == null)
-            {
-                return NotFound();
-            }
-
-            MembroCadastroViewModel membroEditadoModel = new MembroCadastroViewModel
-            {
-
                 Owner = membroEdit.Owner,
-                Id = membroEdit.Id,
-                Nome = membroEdit.Nome,
                 Email = membroEdit.Email,
+                Nome = membroEdit.Nome,
                 Login = membroEdit.Login,
                 PerfilID = membroEdit.PerfilID,
                 Senha = membroEdit.Senha
-                
             };
-
             return View(membroEditadoModel);
+
         }
 
 
@@ -110,9 +91,9 @@ namespace Igreja.WebApp.Controllers
         }
         // Att Membro
 
-        public IActionResult ApagarMembro(Guid id)
+        public IActionResult ApagarMembro(int id)
         {
-            MembroCadastro apagar_membro = _membroCadastroService.BuscarPorGuid(id);
+            MembroCadastro apagar_membro = _membroCadastroService.BuscarPorId(id);
             return View(apagar_membro);
         }
         
@@ -124,10 +105,10 @@ namespace Igreja.WebApp.Controllers
                 {
                     _membroCadastroService.ApagarMembro(id);
                     TempData["MensagemSucesso"] = "membro apagado com sucesso";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Membros","Home");
                 }
 
-                return View("Index");
+                return View("Membros","Home");
             }
             catch (System.Exception erro)
             {

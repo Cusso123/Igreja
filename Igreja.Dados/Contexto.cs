@@ -9,6 +9,7 @@ namespace Igreja.Dados
     {
         public DbSet<MembroCadastro> Membro { get; set; }
         public DbSet<Perfil> Perfil { get; set; }
+        public DbSet<Atividades> Atividades { get; set; }
 
         public Contexto() : base()
         {
@@ -26,6 +27,7 @@ namespace Igreja.Dados
         {
             modelBuilder.ApplyConfiguration(new MembroCadastroConfiguration());
             modelBuilder.ApplyConfiguration(new PerfilConfiguration());
+            modelBuilder.ApplyConfiguration(new AtividadeConfiguration());
         }
 
     }
