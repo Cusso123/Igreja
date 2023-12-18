@@ -56,5 +56,10 @@ namespace Igreja.Dados.Repository
         {
             return Contexto.Atividades.Where(p => true);
         }
+
+        public Atividades BuscarPorID(int AtividadeID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

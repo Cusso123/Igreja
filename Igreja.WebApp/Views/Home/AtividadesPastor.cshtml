@@ -1,9 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@using Igreja.Dominio.Entidades;
+﻿@using Igreja.Dominio.Entidades;
 @using Igreja.WebApp.Helper;
 
 @model IEnumerable<MembroCadastro>
@@ -15,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Title -->
-    <title>Lista de Membros</title>
+    <title>Lista Atividade Pastor</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
     <!-- Animate on scroll -->
@@ -30,7 +25,7 @@
 <style>
     body {
         margin: 0;
-        background: #3B3838;
+        background: #000000;
     }
 
     .alert-index {
@@ -59,13 +54,13 @@
         align-items: center;
         flex-direction: column;
         padding: 30px 35px;
-        background: #FFFFFF;
+        background: #03BC98;
         border-radius: 20px;
         box-shadow: 0px 10px 40px #FFFFFF;
     }
 
         .card-index > h1 {
-            color: #3B3838;
+            color:  #000000;
             font-weight: 800;
             margin: 0;
         }
@@ -75,7 +70,7 @@
     <section class="banner position-relative">
         <div class="parallax" style="background-image: url(https://iili.io/JTMj6TQ.jpg);"></div>
         <div class="banner-data text-center">
-            <h2 class="text-white font-bold">Biblia</h2>
+            <h2 class="text-white font-bold">Atividades</h2>
             <img src="~/images/SimboloPresbiteriana50x65.png" alt="Banner Logo">
         </div>
     </section>
@@ -99,7 +94,7 @@
 
     <div class="main-index">
         <div class="card-index">
-            <h1 class="display-4">Listagem de pessoas</h1>
+            <h1 class="display-4">Listagem de Atividades</h1>
             <table class="table table-striped" id="tabela-geral">
                 <thead class="table-dark">
                     <tr>
@@ -127,13 +122,13 @@
                             </td>
 
                             <td>
-                                <a type="button" class="btn btn-outline-primary role="button" asp-action="Editar" asp-controller="Autenticacao" asp-route-pessoaID="@item.Id">
+                                <a type="button" class="btn btn-outline-primary role="button" asp-action="Editar" asp-controller="Atividades" asp-route-pessoaID="@item.Id">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
                                         <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
                                     </svg>
                                     Editar
                                 </a>
-                                <a type="button" class="btn btn-outline-danger" role="button" asp-action="Apagar" asp-controller="Autenticacao" asp-route-pessoaID="@item.Id">
+                                <a type="button" class="btn btn-outline-danger" role="button" asp-action="Apagar" asp-controller="Atividades" asp-route-pessoaID="@item.Id">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                         <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
                                     </svg>

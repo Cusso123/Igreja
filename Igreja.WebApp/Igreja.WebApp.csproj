@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Cadastro\EditarPerfil.cshtml" />
     <Content Remove="Views\Home\abre versiculos.cshtml" />
     <Content Remove="Views\Home\Verse.cshtml" />
   </ItemGroup>

@@ -29,7 +29,7 @@ namespace Igreja.WebApp.Controllers
         public IActionResult EditarAtv(int AtividadeID)
         {
 
-            Atividades editarAtv = _AtividadeService.GetOneById(AtividadeID);
+            Atividades editarAtv = _AtividadeService.BuscarPorID(AtividadeID);
 
             if (AtividadeID == null || AtividadeID == 0)
             {

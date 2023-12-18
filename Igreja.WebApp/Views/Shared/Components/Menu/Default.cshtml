@@ -32,20 +32,7 @@
 					<div class="nav-bar">
 						<ul>
 								@if (Model.PerfilID == 1)
-								{
-								<li class="menu-item-has-children">
-									<a href="JavaScript:void(0)">Atividades</a>
-									<ul class="sub-menu">
-										<li><a asp-controller="Atividades" asp-action="Index">Atividades</a></li>
-									</ul>
-								</li>
-
-								<li class="menu-item-has-children">
-									<a href="JavaScript:void(0)">Lista Membros</a>
-									<ul class="sub-menu">
-										<li><a asp-controller="Home" asp-action="Membros"> Lista Membros</a></li>
-									</ul>
-								</li>
+							{
 								<li class="menu-item-has-children">
 									<a href="JavaScript:void(0)">Home</a>
 									<ul class="sub-menu">
@@ -70,13 +57,23 @@
 										<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
 									</ul>
 								</li>
-								
-						
+								<li class="menu-item-has-children">
+									<a href="JavaScript:void(0)">Atividades</a>
+									<ul class="sub-menu">
+										<li><a asp-controller="Atividades" asp-action="Index">Atividades</a></li>
+									</ul>
+								</li>
+
+								<li class="menu-item-has-children">
+									<a href="JavaScript:void(0)">Lista Membros</a>
+									<ul class="sub-menu">
+										<li><a asp-controller="Home" asp-action="Membros"> Lista Membros</a></li>
+									</ul>
+								</li>
 								<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
 								}
 
-
-								@if(Model.PerfilID == 2){
+							@if(Model.PerfilID == 2){
 							<li class="menu-item-has-children">
 								<a href="JavaScript:void(0)">Home</a>
 								<ul class="sub-menu">
@@ -107,8 +104,6 @@
 									<li><a asp-controller="Home" asp-action="AtividadesMembro">Lista Atividades</a></li>
 								</ul>
 							</li>
-							
-							
 							<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
 							}
 						</ul>
@@ -133,6 +128,8 @@
 		</a>
 	</div>
 	<ul>
+		@if (Model.PerfilID == 1)
+			{
 		<li class="menu-item-has-children">
 			<a href="JavaScript:void(0)">Home</a>
 			<ul class="sub-menu">
@@ -157,8 +154,60 @@
 				<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
 			</ul>
 		</li>
+		<li class="menu-item-has-children">
+			<a href="JavaScript:void(0)">Atividades</a>
+			<ul class="sub-menu">
+				<li><a asp-controller="Atividades" asp-action="Index">Atividades</a></li>
+			</ul>
+		</li>
+		<li class="menu-item-has-children">
+			<a href="JavaScript:void(0)">Lista Membros</a>
+			<ul class="sub-menu">
+				<li><a asp-controller="Home" asp-action="Membros"> Lista Membros</a></li>
+			</ul>
+		</li>
 		<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
+		}
+		@if (Model.PerfilID == 2)
+		{
+			<li class="menu-item-has-children">
+				<a href="JavaScript:void(0)">Home</a>
+				<ul class="sub-menu">
+					<li><a asp-controller="Home" asp-action="Inicio">Home</a></li>
+				</ul>
+			</li>
+			<li class="menu-item-has-children">
+				<a href="JavaScript:void(0)">Biblia</a>
+				<ul class="sub-menu">
+					<li><a asp-controller="Home" asp-action="Biblia">Biblia</a></li>
+				</ul>
+			</li>
+			<li class="menu-item-has-children">
+				<a href="JavaScript:void(0)">Sermão</a>
+				<ul class="sub-menu">
+					<li><a asp-controller="Home" asp-action="Sermao">Sermão</a></li>
+				</ul>
+			</li>
+			<li class="menu-item-has-children">
+				<a href="JavaScript:void(0)">Blog</a>
+				<ul class="sub-menu">
+					<li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+				</ul>
+			</li>
+			<li class="menu-item-has-children">
+				<a href="JavaScript:void(0)">Atividades</a>
+				<ul class="sub-menu">
+					<li><a asp-controller="Home" asp-action="AtividadesMembro">Lista Atividades</a></li>
+				</ul>
+			</li>
+			<li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
+		}
 	</ul>
+	<div class="donation">
+		Olá @Model.Nome  <svg version="1.1" id="profile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19.738 19.738" style="enable-background:new 0 0 ;" xml:space="preserve"> <g> <path d="M18.18,19.738h-2c0-3.374-2.83-6.118-6.311-6.118s-6.31,2.745-6.31,6.118h-2 c0-4.478,3.729-8.118,8.311-8.118C14.451,11.62,18.18,15.26,18.18,19.738z" /> <path d="M9.87,10.97c-3.023,0-5.484-2.462-5.484-5.485C4.385,2.461,6.846,0,9.87,0 c3.025,0,5.486,2.46,5.486,5.485S12.895,10.97,9.87,10.97z M9.87,2C7.948,2,6.385,3.563,6.385,5.485S7.948,8.97,9.87,8.97 c1.923,0,3.486-1.563,3.486-3.485S11.791,2,9.87,2z" /> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+	</div>
+	<button id="scrollTop" class="scrollTopStick"><svg viewBox="0 0 490.523 490.523" fill="#fff" height="15"> <path style="fill:#000;" d="M487.411,355.047L252.744,120.38c-4.165-4.164-10.917-4.164-15.083,0L2.994,355.047 c-4.093,4.237-3.976,10.99,0.262,15.083c4.134,3.993,10.687,3.993,14.821,0l227.115-227.115l227.115,227.136 c4.237,4.093,10.99,3.976,15.083-0.261c3.993-4.134,3.993-10.688,0-14.821L487.411,355.047z"></path> <path d="M479.859,373.266c-2.831,0.005-5.548-1.115-7.552-3.115L245.192,143.015L18.077,370.151 c-4.237,4.093-10.99,3.976-15.083-0.262c-3.993-4.134-3.993-10.687,0-14.821l234.667-234.667c4.165-4.164,10.917-4.164,15.083,0 l234.667,234.667c4.159,4.172,4.148,10.926-0.024,15.085C485.388,372.146,482.681,373.265,479.859,373.266z"></path> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></button>
+
 	<div class="res-rights flex-all">
 		<p>2023 - Presbiteriana</p>
 	</div>
